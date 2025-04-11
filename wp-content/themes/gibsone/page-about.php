@@ -1,0 +1,375 @@
+<?php
+
+/**
+ * Template Name: About
+ */
+?>
+
+<?php get_header(); ?>
+
+<div class="sec-top-page no_bg">
+    <section class="banner-page" style="background-image: url('img/bg-about.png');">
+        <div class="ban-left">
+            <h1 class="banner-page-title title-2 title_mod FreightDispProBook">About us</h1>
+            <div class="lin-left"><span></span></div>
+            <!-- don't show on phone -->
+            <div class="banner-page-bot-btn mob-none">
+                <button class="bnt-def bnt-def_bigger bnt-def_while js-btn-open-modal">
+                    <i>
+                        <svg>
+                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#line-btn" />
+                        </svg>
+                    </i>
+                    <span>let’s talk!</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="banner-box">
+            <div class="banner-box__title MercuryDisplayRoman">Empowering businesses to reach
+                new heights</div>
+            <div class="lin-left"><span></span></div>
+            <p class="banner-box_des FreightDispProBook">Gibson CRE delivers expert insights and strategic
+                guidance to help
+                our clients make informed decisions in the commercial real estate market.</p>
+        </div>
+    </section>
+    <!-- don't show on phone -->
+    <div class="gibson-baner-top mob-none">
+        <div class="FreightDispProBook gibson-baner-top_name">
+            <span>GIBSON CRE </span>
+            <div class="lin-left"><span></span></div>
+        </div>
+    </div>
+
+    <!-- don't show on pc -->
+    <div class="banner-page-bot-btn banner-page-bot-btn_mob">
+        <button class="bnt-def js-btn-open-modal bnt-def_bigger bnt-def_gold">
+            <i>
+                <svg>
+                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#line-btn" />
+                </svg>
+            </i>
+            <span>let’s talk!</span>
+        </button>
+    </div>
+</div>
+
+<div class="s-bg-all-about">
+    <section class="s-about s-about-page">
+        <div class="container">
+            <div class="s-abo-grid">
+                <div class="s-abo-left">
+                    <h2 class="title-2 title_mod FreightDispProBook">Leadership</h2>
+                    <div class="s-abo-desc">
+                        <p>Founded in Boston's South End in 1962, Gibson Associates
+                            has expanded to become the leader of luxury residential real estate sales
+                            throughout
+                            Greater Boston.
+                        </p>
+                        <p>Evenutally transitioning
+                            to the Sotheby's International Realty brand in 2006, the brokerage has
+                            established
+                            itself as the top Massachusetts-based company
+                            by sales volume and continues to deliver the highest average sale price of any
+                            firm.</p>
+                    </div>
+                </div>
+                <!-- don't show on phone -->
+                <div class="s-abo-right mob-none">
+                    <div class="abo-table">
+                        <div class="abo-item">
+                            <div class="abo-item_top FreightDispProBook">1962</div>
+                            <p class="abo-item_des">Founded in Boston's South End in</p>
+                        </div>
+                        <div class="abo-item">
+                            <div class="abo-item_top FreightDispProBook">2006</div>
+                            <p class="abo-item_des">Joined the Sotheby's International Realty brand</p>
+                        </div>
+                        <div class="abo-item"></div>
+                        <div class="abo-item"></div>
+                        <div class="abo-item">
+                            <div class="abo-item_top FreightDispProBook">100 <span>+</span></div>
+                            <p class="abo-item_des">Global offices through the Sotheby's International
+                                Realty® </p>
+                        </div>
+                        <div class="abo-item">
+                            <div class="abo-item_top FreightDispProBook">1 <span>st</span></div>
+                            <p class="abo-item_des">Massachusetts-based company by sales volume</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="s-abo-img">
+                    <img src="img/ph-about.jpg" alt="Picture about us">
+                </div>
+
+                <!-- show om phone -->
+                <div class="s-abo-mob">
+                    <div class="slid-about-mob">
+                        <div class="swiper  js-mob-swip-abo">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide item-swip">
+                                    <div class="s-item-ab-mob">
+                                        <div class="s-item-ab-mob_title FreightDispProBook">1962</div>
+                                        <p class="s-item-ab-mob_p">Founded in Boston's
+                                            South End in</p>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide item-swip">
+                                    <div class="s-item-ab-mob">
+                                        <div class="s-item-ab-mob_title FreightDispProBook">1962</div>
+                                        <p class="s-item-ab-mob_p">Founded in Boston's
+                                            South End in</p>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide item-swip">
+                                    <div class="s-item-ab-mob">
+                                        <div class="s-item-ab-mob_title FreightDispProBook">1962</div>
+                                        <p class="s-item-ab-mob_p">Founded in Boston's
+                                            South End in</p>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide item-swip">
+                                    <div class="s-item-ab-mob">
+                                        <div class="s-item-ab-mob_title FreightDispProBook">1962</div>
+                                        <p class="s-item-ab-mob_p">Founded in Boston's
+                                            South End in</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="ms-in-gib">
+        <div class="container">
+            <!-- don't show on phone -->
+            <div class="ms-ga-pa mob-none">
+                <div class="ms-ga-pa__inscription FreightDispProBook ">GIBSON CRE</div>
+                <div class="lin-left"><span></span></div>
+            </div>
+            <div class="ms-in-gib__right">
+                <div class="ms-in-gib_des FreightDispProBook">
+                    <p>We are not simply a brokerage, we are a forward-thinking partner, guiding clients in
+                        harnessing
+                        opportunities locally, regionally, and globally.</p>
+                </div>
+                <div class="ms-in-gib_wr_btn">
+                    <button class="bnt-def bnt-def_bigger bnt-def_blue">
+                        <i>
+                            <svg>
+                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#line-btn" />
+                            </svg>
+                        </i>
+                        <span>let’s talk!</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ms-text-left">
+        <div class="container">
+            <div class="ms-text-left__cont">
+                <div class="title-2 title_mod FreightDispProBook">Our Team</div>
+                <div class="ms-text-left__des t-def-t">
+                    <p>At Gibson CRE, our world-class team of seasoned advisors meticulously handle every
+                        detail of your transaction.
+                        Our experienced advisors and associates are committed to
+                        enhancing your asset value and surpassing the expectations of discerning real estate
+                        investors.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- don't show on phone -->
+        <div class="lin-left mob-none"><span></span></div>
+    </div>
+</div>
+
+<div class="teams">
+    <!-- don't show on phone -->
+    <div class="teams_cards mob-none">
+        <div class="team-card js-team-card active" data-item="1">
+            <div class="team-card__img">
+                <img src="img/tema-wade.png" alt="Wade">
+            </div>
+            <div class="team-card__right">
+                <div class="team-card_name MercuryDisplayRoman">Wade Warren</div>
+                <p class="team-card_profession">Chief Executive Officer</p>
+                <div class="lin-left"><span></span></div>
+                <div class="team-card_desc">
+                    <p>Wade Warren is Chief Executive Officer of Real Estate International Realty. He has
+                        been instrumental in building
+                        the residential brand in South Florida since the affiliate
+                        was founded in 2008, and today, enjoys annual sales
+                        in excess of $8.1 billion.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-card js-team-card" data-item="2">
+            <div class="team-card__img">
+                <img src="img/tema--full-2.png" alt="Wade">
+            </div>
+            <div class="team-card__right">
+                <div class="team-card_name MercuryDisplayRoman">Wade Warren</div>
+                <p class="team-card_profession">Chief Executive Officer</p>
+                <div class="lin-left"><span></span></div>
+                <div class="team-card_desc">
+                    <p>Wade Warren is Chief Executive Officer of Real Estate International Realty. He has
+                        been instrumental in building
+                        the residential brand in South Florida since the affiliate
+                        was founded in 2008, and today, enjoys annual sales
+                        in excess of $8.1 billion.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-card js-team-card" data-item="3">
+            <div class="team-card__img">
+                <img src="img/tema--full-2.png" alt="Wade">
+            </div>
+            <div class="team-card__right">
+                <div class="team-card_name MercuryDisplayRoman">Wade Warren</div>
+                <p class="team-card_profession">Chief Executive Officer</p>
+                <div class="lin-left"><span></span></div>
+                <div class="team-card_desc">
+                    <p>Wade Warren is Chief Executive Officer of Real Estate International Realty. He has
+                        been instrumental in building
+                        the residential brand in South Florida since the affiliate
+                        was founded in 2008, and today, enjoys annual sales
+                        in excess of $8.1 billion.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="temms-slider-wr">
+        <div class="swiper swiper-team js-team-swipre">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide pc-none ">
+                    <div class="item-tem-card js-item-card-btn " data-item="0">
+                        <div class="item-tem-card_img img_contin">
+                            <img src="img/tema-wade.png" alt="">
+                        </div>
+                        <div class="item-tem-card_bot">
+                            <div class="lin-left"><span></span></div>
+                            <div class="item-tem-card_name MercuryDisplayRoma">Wade Warren</div>
+                            <p class="item-tem-card_profesion">Chief Executive Officer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="item-tem-card js-item-card-btn" data-item="1">
+                        <div class="item-tem-card_img">
+                            <img src="img/team-1.png" alt="">
+                        </div>
+                        <div class="item-tem-card_bot">
+                            <div class="lin-left"><span></span></div>
+                            <div class="item-tem-card_name MercuryDisplayRoma">Wade Warren</div>
+                            <p class="item-tem-card_profesion">Chief Executive Officer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide js-item-card-btn" data-item="2">
+                    <div class="item-tem-card">
+                        <div class="item-tem-card_img">
+                            <img src="img/team-2.png" alt="">
+                        </div>
+                        <div class="item-tem-card_bot">
+                            <div class="lin-left"><span></span></div>
+                            <div class="item-tem-card_name MercuryDisplayRoma">Wade Warren</div>
+                            <p class="item-tem-card_profesion">Chief Executive Officer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="item-tem-card js-item-card-btn" data-item="3">
+                        <div class="item-tem-card_img">
+                            <img src="img/team-3.png" alt="">
+                        </div>
+                        <div class="item-tem-card_bot">
+                            <div class="lin-left"><span></span></div>
+                            <div class="item-tem-card_name MercuryDisplayRoma">Wade Warren</div>
+                            <p class="item-tem-card_profesion">Chief Executive Officer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="about-me">
+    <div class="container">
+        <div class="about-me_left">
+            <div class="about-me_left_top">
+                <div class="title-2 title_mod FreightDispProBook">JoinThe Exceptional</div>
+                <div class="lin-left"><span></span></div>
+            </div>
+            <div class="about-me_des t-def-t">
+                <p>Our expansion into the realm of commercial real estate services,
+                    is tailored to match the specific investment goals of our clients.
+                    With the strength of the Sotheby's International Realty®network,
+                    we connect you to premier investors buyers, sellers, and tenants.</p>
+                <p>With Gibson Associates, you have a guide with unrivaled local expertise and
+                    extensive
+                    global reach to help you navigate the market and achieve unparalleled
+                    financial success.
+                </p>
+            </div>
+        </div>
+        <div class="about-me_right FreightDispProBook">
+            Let us lead you on your journey to realizing
+            your investment returns!
+        </div>
+    </div>
+</div>
+
+<?php
+$lets_title = get_field('field_tab_lets_title', 'option');
+$sub_title = get_field('field_tab_lets_sub_title', 'option');
+?>
+
+<div class="s-form">
+    <div class="s-form_top s-form_no_pad">
+        <div class="container">
+            <div class="title-2 title_mod title_uper FreightDispProBook"><?php echo $lets_title; ?></div>
+            <div class="s-form_desc">
+                <p><?php echo $sub_title; ?></p>
+            </div>
+        </div>
+        <div class="bg-s-form"></div>
+    </div>
+
+    <div class="s-gb-con-bot dop-bot-con">
+        <div class="s-form-bot">
+            <div class="container">
+                <div class="s-form-wr">
+                    <?php get_template_part('template-parts/contact-form'); ?>
+                </div>
+            </div>
+            <div class="s-form-bot_f">
+                <div class="f_inscription FreightDispProBook">GIBSON CRE</div>
+                <div class="lin-left"><span></span></div>
+            </div>
+        </div>
+
+        <div class="pos-block-r">
+            <div class="s-imga" style="background-image: url('img/bg-image-full4.jpg');"></div>
+        </div>
+    </div>
+</div>
+
+<?php get_footer(); ?>

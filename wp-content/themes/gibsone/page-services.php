@@ -1,0 +1,342 @@
+<?php
+
+/**
+ * Template Name: Services
+ */
+
+?>
+
+<?php get_header(); ?>
+
+<div class="sec-top-page no_bg">
+    <section class="banner-page" style="background-image: url('img/bg-services.png');">
+        <div class="ban-left">
+            <h1 class="banner-page-title title-2 title_mod FreightDispProBook">Our Services</h1>
+            <div class="lin-left"><span></span></div>
+            <!-- don't show on phone -->
+            <div class="banner-page-bot-btn mob-none">
+                <button class="bnt-def bnt-def_bigger bnt-def_while js-btn-open-modal">
+                    <i>
+                        <svg>
+                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#line-btn" />
+                        </svg>
+                    </i>
+                    <span>let’s talk!</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="banner-box ">
+            <div class="banner-box__title MercuryDisplayRoman">We are strategic advisors providing a
+                holistic approach to support both tenants and landlords.</div>
+            <div class="lin-left"><span></span></div>
+            <p class="banner-box_des FreightDispProBook">We understand that finding the right space or
+                tenant is about more than just the price per square foot.</p>
+        </div>
+    </section>
+
+    <!-- don't show on phone -->
+    <div class="gibson-baner-top gibson-baner-top_gray mob-none">
+        <div class="FreightDispProBook gibson-baner-top_name">
+            <span>GIBSON CRE </span>
+            <div class="lin-left"><span></span></div>
+        </div>
+    </div>
+
+    <!-- don't show on pc -->
+    <div class="banner-page-bot-btn banner-page-bot-btn_mob">
+        <button class="bnt-def bnt-def_bigger bnt-def_gold js-btn-open-modal">
+            <i>
+                <svg>
+                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#line-btn" />
+                </svg>
+            </i>
+            <span>let’s talk!</span>
+        </button>
+    </div>
+</div>
+
+<section class="s-serv">
+    <div class="container">
+        <div class="title-2 title_mod FreightDispProBook">A Consultative Approach</div>
+        <div class="t-def-t s-serv_des_top">
+            <p>Our agents and support staff are highly knowledgeable and willing to assist and facilitate in
+                all aspects of commercial real estate, including:</p>
+        </div>
+
+        <!-- don't show om pc -->
+        <div class="servises-mob">
+            <div class="item-serv-mob js-item-serv-mob">
+                <div class="item-serv-mob_top js-top-ser-mob">
+                    <span class="FreightDispProBook">01</span>
+                    <div class="item-serv-mob_title MercuryDisplayRoman">Investment Sales & Acquisition
+                    </div>
+                    <i class="item-serv-mob_i">
+                        <svg>
+                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
+                        </svg>
+                        <svg>
+                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
+                        </svg>
+                    </i>
+                </div>
+                <div class="item-serv-mob_bot " style="overflow: hidden; height: 0; transition: height 0.3s ease;">
+                    <p>We specialize in assisting investors with the acquisition and disposition of
+                        commercial properties.
+                        Through data-driven analysis and strategic marketing, we maximize property values
+                        and identify lucrative investment opportunities.</p>
+                </div>
+            </div>
+
+            <div class="item-serv-mob js-item-serv-mob">
+                <div class="item-serv-mob_top js-top-ser-mob">
+                    <span class="FreightDispProBook">02</span>
+                    <div class="item-serv-mob_title MercuryDisplayRoman">Landlord & Tenant Service</div>
+                    <i class="item-serv-mob_i">
+                        <svg>
+                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
+                        </svg>
+                        <svg>
+                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
+                        </svg>
+                    </i>
+                </div>
+                <div class="item-serv-mob_bot " style="overflow: hidden; height: 0; transition: height 0.3s ease;">
+                    <p>We specialize in assisting investors with the acquisition and disposition of
+                        commercial properties.
+                        Through data-driven analysis and strategic marketing, we maximize property values
+                        and identify lucrative investment opportunities.</p>
+                </div>
+            </div>
+
+            <div class="item-serv-mob js-item-serv-mob">
+                <div class="item-serv-mob_top js-top-ser-mob">
+                    <span class="FreightDispProBook">03</span>
+                    <div class="item-serv-mob_title MercuryDisplayRoman">Investment Sales & AcquDevelopment Consulting</div>
+                    <i class="item-serv-mob_i">
+                        <svg>
+                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
+                        </svg>
+                        <svg>
+                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
+                        </svg>
+                    </i>
+                </div>
+                <div class="item-serv-mob_bot " style="overflow: hidden; height: 0; transition: height 0.3s ease;">
+                    <p>We specialize in assisting investors with the acquisition and disposition of
+                        commercial properties.
+                        Through data-driven analysis and strategic marketing, we maximize property values
+                        and identify lucrative investment opportunities.</p>
+                </div>
+            </div>
+
+            <div class="item-serv-mob js-item-serv-mob">
+                <div class="item-serv-mob_top js-top-ser-mob">
+                    <span class="FreightDispProBook">04</span>
+                    <div class="item-serv-mob_title MercuryDisplayRoman">Valuation & Market Analysis</div>
+                    <i class="item-serv-mob_i">
+                        <svg>
+                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
+                        </svg>
+                        <svg>
+                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
+                        </svg>
+                    </i>
+                </div>
+                <div class="item-serv-mob_bot " style="overflow: hidden; height: 0; transition: height 0.3s ease;">
+                    <p>We specialize in assisting investors with the acquisition and disposition of
+                        commercial properties.
+                        Through data-driven analysis and strategic marketing, we maximize property values
+                        and identify lucrative investment opportunities.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- don't show on phone -->
+        <div class="servises-items  mob-none">
+            <div class="items-ser">
+                <div class="item-ser js-item-ser active" data-item="1">
+                    <div class="item-ser_wr">
+                        <span class="FreightDispProBook">01</span>
+                        <div class="item-ser__title MercuryDisplayRoman">Investment Sales & Acquisition
+                        </div>
+                        <i class="item-ser_i">
+                            <svg>
+                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
+                            </svg>
+                            <svg>
+                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
+                            </svg>
+                        </i>
+                    </div>
+                </div>
+
+                <div class="item-ser js-item-ser" data-item="2">
+                    <div class="item-ser_wr">
+                        <span class="FreightDispProBook">02</span>
+                        <div class="item-ser__title MercuryDisplayRegular">Landlord & Tenant Service</div>
+                        <i class="item-ser_i">
+                            <svg>
+                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
+                            </svg>
+                            <svg>
+                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
+                            </svg>
+                        </i>
+                    </div>
+                </div>
+
+                <div class="item-ser js-item-ser" data-item="3">
+                    <div class="item-ser_wr">
+                        <span class="FreightDispProBook">03</span>
+                        <div class="item-ser__title MercuryDisplayRegular">Development Consulting</div>
+                        <i class="item-ser_i">
+                            <svg>
+                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
+                            </svg>
+                            <svg>
+                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
+                            </svg>
+                        </i>
+                    </div>
+                </div>
+
+                <div class="item-ser js-item-ser" data-item="4">
+                    <div class="item-ser_wr">
+                        <span class="FreightDispProBook">04</span>
+                        <div class="item-ser__title MercuryDisplayRegular">Valuation & Market Analysis</div>
+                        <i class="item-ser_i">
+                            <svg>
+                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
+                            </svg>
+                            <svg>
+                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
+                            </svg>
+                        </i>
+                    </div>
+                </div>
+            </div>
+            <div class="card-cervis">
+                <div class="card-s js-card-s active" data-item="1">
+                    <div class="card-s__title MercuryDisplayRegular">Investment Sales & Acquisition</div>
+                    <div class="lin-left"><span></span></div>
+                    <div class="card-s_des">
+                        <p>We specialize in assisting investors with the acquisition and disposition of
+                            commercial properties.
+                            Through data-driven analysis and strategic marketing, we maximize property
+                            values and identify lucrative investment opportunities.</p>
+                    </div>
+                    <div class="card-s_img">
+                        <img src="img/img-card-ce-1.jpg" alt="img">
+                    </div>
+                </div>
+
+                <div class="card-s js-card-s" data-item="2">
+                    <div class="card-s__title MercuryDisplayRegular">Landlord & Tenant Service</div>
+                    <div class="lin-left"><span></span></div>
+                    <div class="card-s_des">
+                        <p>Our team provides expert leasing services, ensuring that landlords secure
+                            high-quality tenants and tenants find optimal spaces that align with their
+                            business needs. We negotiate lease terms that support long-term growth and
+                            stability.</p>
+                    </div>
+                    <div class="card-s_img">
+                        <img src="img/img-card-ce-2.jpg" alt="img">
+                    </div>
+                </div>
+
+                <div class="card-s js-card-s" data-item="3">
+                    <div class="card-s__title MercuryDisplayRegular">Development Consulting</div>
+                    <div class="lin-left"><span></span></div>
+                    <div class="card-s_des">
+                        <p>From concept to completion, we guide developers through the complexities of site
+                            selection, entitlements, zoning, financing, and marketing. Our expertise ensures
+                            a streamlined  development process that maximizes returns.</p>
+                    </div>
+                    <div class="card-s_img">
+                        <img src="img/img-card-ce-3.jpg" alt="img">
+                    </div>
+                </div>
+
+                <div class="card-s js-card-s" data-item="4">
+                    <div class="card-s__title MercuryDisplayRegular">Valuation & Market Analysis</div>
+                    <div class="lin-left"><span></span></div>
+                    <div class="card-s_des">
+                        <p>Our industry-leading research capabilities provide clients with real-time market
+                            insights, property valuations, and feasibility studies, empowering them to make
+                            informed decisions.</p>
+                    </div>
+                    <div class="card-s_img">
+                        <img src="img/img-card-ce-4.jpg" alt="img">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sers-market">
+            <div class="title-2 title_mod FreightDispProBook">Pre-Market Renovation Services</div>
+            <!-- don't show on pc -->
+            <div class="lin-left mob-line-sers"><span></span></div>
+            <div class="sers-market_wr">
+                <div class="sers-left">
+                    <!-- don't show on phone -->
+                    <div class="lin-left mob-none"><span></span></div>
+                    <div class="sers-btn-wr">
+                        <a href="#" class="btn-down" download>
+                            <i>
+                                <svg>
+                                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#icon-download" />
+                                </svg>
+                            </i>
+                            <span>download pdf</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="sers-right t-def-t">
+                    <p>Experts will evaluate your property prior to it being listed for sale. They identify
+                        the upgrades that can make it most appealing to potential buyers, and upon your
+                        approval, execute all the work from start to finish.</p>
+                    <p> From assembling a team of skilled contractors, to ordering materials and ensuring
+                        all work meets building codes, you can rest assured we will handle all the details
+                        for you.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<?php
+$lets_title = get_field('field_tab_lets_title', 'option');
+$sub_title = get_field('field_tab_lets_sub_title', 'option');
+?>
+
+<div class="s-form s-form_no_pad">
+    <div class="s-form_top">
+        <div class="container">
+            <div class="title-2 title_mod title_uper FreightDispProBook"><?php echo $lets_title; ?></div>
+            <div class="s-form_desc">
+                <p><?php echo $sub_title; ?></p>
+            </div>
+        </div>
+        <div class="bg-s-form"></div>
+    </div>
+    <div class="s-gb-con-bot dop-bot-con">
+        <div class="s-form-bot">
+            <div class="container">
+                <div class="s-form-wr">
+                    <?php get_template_part('template-parts/contact-form'); ?>
+                </div>
+            </div>
+            <div class="s-form-bot_f">
+                <div class="f_inscription FreightDispProBook">GIBSON CRE</div>
+                <div class="lin-left"><span></span></div>
+            </div>
+        </div>
+
+        <div class="pos-block-r">
+            <div class="s-imga" style="background-image: url('img/bg-image-full3.jpg');"></div>
+        </div>
+    </div>
+</div>
+
+<?php get_footer(); ?>
