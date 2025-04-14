@@ -8,10 +8,18 @@
 
 <?php get_header(); ?>
 
+<?php
+$bg_image = get_field('f_p_port_bg');
+$f_p_port_title = get_field('f_p_port_title');
+$f_p_port_sub_title = get_field('f_p_port_sub_title');
+$f_p_port_p = get_field('f_p_port_p');
+$f_p_port_bot_picture = get_field('f_p_port_bot_picture');
+?>
+
 <div class="sec-top-page">
-    <section class="banner-page" style="background-image: url('img/bg-portfoli.png');">
+    <section class="banner-page" style="background-image: url('<?php echo $bg_image['url']; ?>');">
         <div class="ban-left">
-            <h1 class="banner-page-title title-2 title_mod FreightDispProBook">Portfolio</h1>
+            <h1 class="banner-page-title title-2 title_mod FreightDispProBook"><?php echo $f_p_port_title; ?></h1>
             <div class="lin-left"><span></span></div>
             <!-- don't show on phone -->
             <div class="banner-page-bot-btn mob-none">
@@ -27,12 +35,9 @@
         </div>
 
         <div class="banner-box">
-            <div class="banner-box__title MercuryDisplayRoman">We specializes in all aspects <br />
-                of commercial real estate. </div>
+            <div class="banner-box__title MercuryDisplayRoman"><?php echo $f_p_port_sub_title; ?></div>
             <div class="lin-left"><span></span></div>
-            <p class="banner-box_des FreightDispProBook">Our portfolio of listings is comprised of all types
-                of assets: <br />
-                industrial, retail, office, multifamily, land and hospitality</p>
+            <p class="banner-box_des FreightDispProBook"><?php echo $f_p_port_p; ?></p>
         </div>
     </section>
 
@@ -59,89 +64,44 @@
 
 <section class="s-porfolio s-porfolio_page">
     <div class="port-items port-items_page">
-        <a href="#" class="item-port">
-            <figure style="background-image: url('img/portfolio-card-1.jpg');"></figure>
-            <span class="item-port_title MercuryDisplayRegular">Rosewood Residences San Francisco</span>
+        <?php
+        $portfolio_query = new WP_Query([
+            'post_type' => 'portfolio',
+            'posts_per_page' => -1,
+        ]);
 
-            <span class="bnt-def bnt-def_middle_height btn-def_bor-white">
-                <i>
-                    <svg>
-                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#line-btn" />
-                    </svg>
-                </i>
-                <span>view</span>
-            </span>
-        </a>
+        if ($portfolio_query->have_posts()) :
+            while ($portfolio_query->have_posts()) : $portfolio_query->the_post();
 
-        <a href="#" class="item-port">
-            <figure style="background-image: url('img/portfolio-card-2.jpg');"></figure>
-            <span class="item-port_title MercuryDisplayRegular">Rosewood Residences San Francisco</span>
+                $name = get_field('f_portfolio_name');
+                $image = get_field('f_portfolio_img');
+                $link = get_field('f_portfolio_link');
 
-            <span class="bnt-def bnt-def_middle_height btn-def_bor-white">
-                <i>
-                    <svg>
-                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#line-btn" />
-                    </svg>
-                </i>
-                <span>view</span>
-            </span>
-        </a>
+                $link = $link ?: '#';
+                $image_url = is_array($image) ? $image['url'] : '';
+                $title = $name ?: get_the_title();
+        ?>
+                <a href="<?php echo esc_url($link); ?>" class="item-port">
+                    <?php if ($image_url): ?>
+                        <figure style="background-image: url('<?php echo esc_url($image_url); ?>');"></figure>
+                    <?php endif; ?>
 
-        <a href="#" class="item-port">
-            <figure style="background-image: url('img/portfolio-card-3.jpg');"></figure>
-            <span class="item-port_title MercuryDisplayRegular">Rosewood Residences San Francisco</span>
+                    <span class="item-port_title MercuryDisplayRegular"><?php echo esc_html($title); ?></span>
 
-            <span class="bnt-def bnt-def_middle_height btn-def_bor-white">
-                <i>
-                    <svg>
-                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#line-btn" />
-                    </svg>
-                </i>
-                <span>view</span>
-            </span>
-        </a>
-
-        <a href="#" class="item-port">
-            <figure style="background-image: url('img/portfolio-card-4.jpg');"></figure>
-            <span class="item-port_title MercuryDisplayRegular">Rosewood Residences San Francisco</span>
-
-            <span class="bnt-def bnt-def_middle_height btn-def_bor-white">
-                <i>
-                    <svg>
-                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#line-btn" />
-                    </svg>
-                </i>
-                <span>view</span>
-            </span>
-        </a>
-
-        <a href="#" class="item-port">
-            <figure style="background-image: url('img/portfolio-card-5.jpg');"></figure>
-            <span class="item-port_title MercuryDisplayRegular">Rosewood Residences San Francisco</span>
-
-            <span class="bnt-def bnt-def_middle_height btn-def_bor-white">
-                <i>
-                    <svg>
-                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#line-btn" />
-                    </svg>
-                </i>
-                <span>view</span>
-            </span>
-        </a>
-
-        <a href="#" class="item-port">
-            <figure style="background-image: url('img/portfolio-card-6.jpg');"></figure>
-            <span class="item-port_title MercuryDisplayRegular">Rosewood Residences San Francisco</span>
-
-            <span class="bnt-def bnt-def_middle_height btn-def_bor-white">
-                <i>
-                    <svg>
-                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#line-btn" />
-                    </svg>
-                </i>
-                <span>view</span>
-            </span>
-        </a>
+                    <span class="bnt-def bnt-def_middle_height btn-def_bor-white">
+                        <i>
+                            <svg>
+                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#line-btn" />
+                            </svg>
+                        </i>
+                        <span>view</span>
+                    </span>
+                </a>
+        <?php
+            endwhile;
+            wp_reset_postdata();
+        endif;
+        ?>
     </div>
 </section>
 
@@ -175,7 +135,7 @@ $sub_title = get_field('field_tab_lets_sub_title', 'option');
         </div>
 
         <div class="pos-block-r">
-            <div class="s-imga" style="background-image: url('img/bg-image-full.jpg');"></div>
+            <div class="s-imga" style="background-image: url('<?php echo $f_p_port_bot_picture['url']; ?>');"></div>
         </div>
     </div>
 </div>

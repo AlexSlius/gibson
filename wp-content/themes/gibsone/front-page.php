@@ -1,28 +1,44 @@
 <?php get_header(); ?>
 
-<section class="main-baner" style="background-image: url('img/main-baner.jpg');">
-    <video autoplay="" muted="" loop="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
-        <source type="video/mp4" src="video/2927986-hd_1920_1080_24fps.mp4">
-        <!-- <source type="video/webm" src=""> -->
-    </video>
+<?php
+$bg_image = get_field('f_home_banner_gb');
+$video_mp4 = get_field('f_home_banner_video_mp4');
+$video_webm = get_field('f_home_banner_video_2');
+
+$f_home_banner_title = get_field('f_home_banner_title');
+$f_home_banner_sub_title = get_field('f_home_banner_sub_title');
+$f_home_banner_p_1 = get_field('f_home_banner_p_1');
+$f_home_banner_p_2 = get_field('f_home_banner_p_2');
+?>
+
+<section class="main-baner" style="background-image: url('<?php echo $bg_image['url']; ?>');">
+    <?php if ($video_mp4 || $video_webm): ?>
+        <video autoplay="" muted="" loop="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+            <?php if ($video_mp4): ?>
+                <source src="<?php echo esc_url($video_mp4); ?>" type="video/mp4">
+            <?php endif; ?>
+            <?php if ($video_webm): ?>
+                <source src="<?php echo esc_url($video_webm); ?>" type="video/webm">
+            <?php endif; ?>
+        </video>
+    <?php endif; ?>
 
     <div class="main-baner_top">
         <div class="main-baner_top_wr_title">
             <div class="main-baner_top_p">
-                <h1 class="main-title FreightDispProBook">Gibson CRE</h1>
+                <h1 class="main-title FreightDispProBook"><?php echo $f_home_banner_title ?></h1>
             </div>
             <i class="m-lin-top"></i>
         </div>
         <div class="main-baner_top_p">
-            <p class="sub-main-title FreightDispProBook">Real estate expertise from Southern <br /> to
-                Central Florida</p>
+            <p class="sub-main-title FreightDispProBook"><?php echo $f_home_banner_sub_title ?></p>
         </div>
     </div>
 
     <div class="main-baner_bot">
         <div class="main-baner_bot_left FreightDispProBook">
-            <div>Local Expertise</div>
-            <div>Global Network</div>
+            <div><?php echo $f_home_banner_p_1 ?></div>
+            <div><?php echo $f_home_banner_p_2 ?></div>
         </div>
 
         <div class="main-baner_bot_right">
@@ -41,15 +57,20 @@
     </div>
 </section>
 
+<?php
+$f_home_welcome_title = get_field('f_home_welcome_title');
+$f_home_welcome_editor = get_field('f_home_welcome_editor');
+$f_home_welcome_link = get_field('f_home_welcome_link');
+?>
+
 <div class="bg-section-ab">
     <section class="s-welcome">
         <div class="container">
-            <h2 class="title-2 title_mod FreightDispProBook">Welcome to Gibson CRE – <br />
-                Redefining Commercial REAL ESTATE EXCELLENCE</h2>
+            <h2 class="title-2 title_mod FreightDispProBook"><?php echo $f_home_welcome_title ?></h2>
             <div class="lin-left"><span></span></div>
             <div class="w-bot">
                 <div class="w-bot_left">
-                    <a href="#" class="bnt-def bnt-def_bigger bnt-def_gold">
+                    <a href="<?php echo $f_home_welcome_link ?>" class="bnt-def bnt-def_bigger bnt-def_gold">
                         <i>
                             <svg>
                                 <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#line-btn" />
@@ -59,30 +80,27 @@
                     </a>
                 </div>
                 <div class="w-bot_desc">
-                    <p>Gibson CRE delivers exceptional commercial real estate services across diverse
-                        sectors,
-                        including Multifamily,
-                        Office, Industrial, Retail, and more. </p>
-                    <p>Our experienced team offers personalized service and market expertise to meet each
-                        client's unique needs. Whether you're a property owner, investor, or developer, we
-                        provide tailored solutions that drive results.</p>
+                    <?php echo $f_home_welcome_editor ?>
                 </div>
             </div>
         </div>
     </section>
 
+    <?php
+    $f_home_about_title = get_field('f_home_about_title');
+    $f_home_about_editor = get_field('f_home_about_editor');
+    $f_home_about_img = get_field('f_home_about_img');
+    $home_about_repeater = get_field('home_about_repeater_fields');
+    $f_home_about_link = get_field('f_home_about_link');
+    ?>
+
     <section class="s-about">
         <div class="container">
             <div class="s-abo-grid">
                 <div class="s-abo-left">
-                    <h2 class="title-2 title_mod FreightDispProBook">About us</h2>
+                    <h2 class="title-2 title_mod FreightDispProBook"><?php echo  $f_home_about_title ?></h2>
                     <div class="s-abo-desc">
-                        <p>Our comprehensive approach to commercial real estate
-                            is rooted in a deep understanding of market dynamics
-                            and client needs. Whether you’re seeking to expand your portfolio, secure a
-                            high-value property, or enhance
-                            the performance of your existing assets, we are here
-                            to provide guidance every step of the way. </p>
+                        <?php echo  $f_home_about_editor ?>
                     </div>
                 </div>
 
@@ -90,29 +108,26 @@
                 <div class="s-abo-right mob-none">
                     <div class="abo-table">
                         <div class="abo-item">
-                            <div class="abo-item_top FreightDispProBook">10 <span>+</span></div>
-                            <p class="abo-item_des">Years of experience
-                                in real estate market</p>
+                            <div class="abo-item_top FreightDispProBook"><?php echo $home_about_repeater[0]['text_field_1']; ?> <span><?php echo $home_about_repeater[0]['text_field_2']; ?></span></div>
+                            <p class="abo-item_des"><?php echo $home_about_repeater[0]['text_field_3']; ?></p>
                         </div>
                         <div class="abo-item">
-                            <div class="abo-item_top FreightDispProBook">500 <span>+</span></div>
-                            <p class="abo-item_des">Successful transactions in sales and leasing</p>
+                            <div class="abo-item_top FreightDispProBook"><?php echo $home_about_repeater[1]['text_field_1']; ?> <span><?php echo $home_about_repeater[1]['text_field_2']; ?></span></div>
+                            <p class="abo-item_des"><?php echo $home_about_repeater[1]['text_field_3']; ?></p>
                         </div>
                         <div class="abo-item"></div>
                         <div class="abo-item"></div>
                         <div class="abo-item">
-                            <div class="abo-item_top FreightDispProBook">95 <span>%</span></div>
-                            <p class="abo-item_des">Satisfied client
-                                s who recommend us</p>
+                            <div class="abo-item_top FreightDispProBook"><?php echo $home_about_repeater[2]['text_field_1']; ?> <span><?php echo $home_about_repeater[2]['text_field_2']; ?></span></div>
+                            <p class="abo-item_des"><?php echo $home_about_repeater[2]['text_field_3']; ?></p>
                         </div>
                         <div class="abo-item">
-                            <div class="abo-item_top FreightDispProBook">15 <span>+</span></div>
-                            <p class="abo-item_des">Real estate
-                                sectors served</p>
+                            <div class="abo-item_top FreightDispProBook"><?php echo $home_about_repeater[3]['text_field_1']; ?> <span><?php echo $home_about_repeater[3]['text_field_2']; ?></span></div>
+                            <p class="abo-item_des"><?php echo $home_about_repeater[3]['text_field_3']; ?></p>
                         </div>
                     </div>
                     <div class="s-abo-right_btn">
-                        <a href="#" class="bnt-def bnt-def_bigget_height  bnt-def_gold">
+                        <a href="<?php echo $f_home_about_link ?>" class="bnt-def bnt-def_bigget_height  bnt-def_gold">
                             <i>
                                 <svg>
                                     <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#line-btn" />
@@ -124,43 +139,36 @@
                 </div>
 
                 <div class="s-abo-img">
-                    <img src="img/ph.jpg" alt="Picture about us">
+                    <img src="<?php echo $f_home_about_img['url'] ?>" alt="<?php echo $f_home_about_img['alt'] ?>">
                 </div>
 
-                <!-- show om phone -->
+                <!-- show on phone -->
                 <div class="s-abo-mob">
                     <div class="slid-about-mob">
                         <div class="swiper  js-mob-swip-abo">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide item-swip">
                                     <div class="s-item-ab-mob">
-                                        <div class="s-item-ab-mob_title FreightDispProBook">10<span>+</span></div>
-                                        <p class="s-item-ab-mob_p">Years of experience
-                                            in real estate market</p>
+                                        <div class="s-item-ab-mob_title FreightDispProBook"><?php echo $home_about_repeater[0]['text_field_1']; ?><span><?php echo $home_about_repeater[0]['text_field_2']; ?></span></div>
+                                        <p class="s-item-ab-mob_p"><?php echo $home_about_repeater[0]['text_field_3']; ?></p>
                                     </div>
                                 </div>
-
                                 <div class="swiper-slide item-swip">
                                     <div class="s-item-ab-mob">
-                                        <div class="s-item-ab-mob_title FreightDispProBook">10<span>+</span></div>
-                                        <p class="s-item-ab-mob_p">Years of experience
-                                            in real estate market</p>
+                                        <div class="s-item-ab-mob_title FreightDispProBook"><?php echo $home_about_repeater[1]['text_field_1']; ?><span><?php echo $home_about_repeater[1]['text_field_2']; ?></span></div>
+                                        <p class="s-item-ab-mob_p"><?php echo $home_about_repeater[1]['text_field_3']; ?></p>
                                     </div>
                                 </div>
-
                                 <div class="swiper-slide item-swip">
                                     <div class="s-item-ab-mob">
-                                        <div class="s-item-ab-mob_title FreightDispProBook">10<span>+</span></div>
-                                        <p class="s-item-ab-mob_p">Years of experience
-                                            in real estate market</p>
+                                        <div class="s-item-ab-mob_title FreightDispProBook"><?php echo $home_about_repeater[2]['text_field_1']; ?><span><?php echo $home_about_repeater[2]['text_field_2']; ?></span></div>
+                                        <p class="s-item-ab-mob_p"><?php echo $home_about_repeater[2]['text_field_3']; ?></p>
                                     </div>
                                 </div>
-
                                 <div class="swiper-slide item-swip">
                                     <div class="s-item-ab-mob">
-                                        <div class="s-item-ab-mob_title FreightDispProBook">10<span>+</span></div>
-                                        <p class="s-item-ab-mob_p">Years of experience
-                                            in real estate market</p>
+                                        <div class="s-item-ab-mob_title FreightDispProBook"><?php echo $home_about_repeater[3]['text_field_1']; ?><span><?php echo $home_about_repeater[3]['text_field_2']; ?></span></div>
+                                        <p class="s-item-ab-mob_p"><?php echo $home_about_repeater[3]['text_field_3']; ?></p>
                                     </div>
                                 </div>
                             </div>
@@ -190,19 +198,23 @@
     </div>
 </div>
 
+<?php
+$f_home_let_title = get_field('f_home_let_title');
+$f_home_let_desc = get_field('f_home_let_desc');
+$f_home_let_img = get_field('f_home_let_img');
+?>
+
 <section class="s-start">
     <div class="s-start_top">
         <div class="container">
             <div class="s-start__des">
-                <h2 class="title-2 s-start_title title_uper title_mod FreightDispProBook">LET'S GET STARTED!
-                </h2>
+                <h2 class="title-2 s-start_title title_uper title_mod FreightDispProBook"><?php echo $f_home_let_title ?></h2>
                 <div class="s-start_text">
-                    <p>Whether you're buying, selling, leasing,
-                        or investing, Gibson CRE - is your trusted partner in commercial real estate.</p>
+                    <?php echo $f_home_let_desc ?>
                 </div>
             </div>
             <div class="s-start__img">
-                <img src="img/img-lets-start.jpg" alt="">
+                <img src="<?php echo $f_home_let_img['url']; ?>" alt="<?php echo $f_home_let_img['alt']; ?>">
             </div>
         </div>
         <div class="sta-top-bg"></div>
@@ -224,94 +236,45 @@
     </div>
 </section>
 
+<?php
+$f_home_portfolio_title = get_field('f_home_portfolio_title');
+$portfolio_ids = get_field('f_home_portfoli_portfolio');
+$f_home_portfolio_des = get_field('f_home_portfolio_des');
+$f_home_portfolio_lin = get_field('f_home_portfolio_link');
+?>
+
 <section class="s-porfolio">
     <div class="container">
-        <h2 class="title-2 title_mod FreightDispProBook">Portfolio</h2>
+        <h2 class="title-2 title_mod FreightDispProBook"><?php echo $f_home_portfolio_title; ?></h2>
     </div>
     <div class="port-items">
-        <a href="#" class="item-port">
-            <figure style="background-image: url('img/portfolio-card-1.jpg');"></figure>
-            <span class="item-port_title MercuryDisplayRegular">Rosewood Residences San Francisco</span>
+        <?php
+        if ($portfolio_ids) :
+            foreach ($portfolio_ids as $post_id) :
+                $title = get_the_title($post_id);
+                $link = get_permalink($post_id);
+                $image = get_field('f_portfolio_img', $post_id);
+                $image_url = is_array($image) ? $image['url'] : $image;
+        ?>
 
-            <span class="bnt-def bnt-def_middle_height btn-def_bor-white">
-                <i>
-                    <svg>
-                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#line-btn" />
-                    </svg>
-                </i>
-                <span>view</span>
-            </span>
-        </a>
-
-        <a href="#" class="item-port">
-            <figure style="background-image: url('img/portfolio-card-2.jpg');"></figure>
-            <span class="item-port_title MercuryDisplayRegular">Rosewood Residences San Francisco</span>
-
-            <span class="bnt-def bnt-def_middle_height btn-def_bor-white">
-                <i>
-                    <svg>
-                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#line-btn" />
-                    </svg>
-                </i>
-                <span>view</span>
-            </span>
-        </a>
-
-        <a href="#" class="item-port">
-            <figure style="background-image: url('img/portfolio-card-3.jpg');"></figure>
-            <span class="item-port_title MercuryDisplayRegular">Rosewood Residences San Francisco</span>
-
-            <span class="bnt-def bnt-def_middle_height btn-def_bor-white">
-                <i>
-                    <svg>
-                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#line-btn" />
-                    </svg>
-                </i>
-                <span>view</span>
-            </span>
-        </a>
-
-        <a href="#" class="item-port">
-            <figure style="background-image: url('img/portfolio-card-4.jpg');"></figure>
-            <span class="item-port_title MercuryDisplayRegular">Rosewood Residences San Francisco</span>
-
-            <span class="bnt-def bnt-def_middle_height btn-def_bor-white">
-                <i>
-                    <svg>
-                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#line-btn" />
-                    </svg>
-                </i>
-                <span>view</span>
-            </span>
-        </a>
-
-        <a href="#" class="item-port">
-            <figure style="background-image: url('img/portfolio-card-5.jpg');"></figure>
-            <span class="item-port_title MercuryDisplayRegular">Rosewood Residences San Francisco</span>
-
-            <span class="bnt-def bnt-def_middle_height btn-def_bor-white">
-                <i>
-                    <svg>
-                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#line-btn" />
-                    </svg>
-                </i>
-                <span>view</span>
-            </span>
-        </a>
-
-        <a href="#" class="item-port">
-            <figure style="background-image: url('img/portfolio-card-6.jpg');"></figure>
-            <span class="item-port_title MercuryDisplayRegular">Rosewood Residences San Francisco</span>
-
-            <span class="bnt-def bnt-def_middle_height btn-def_bor-white">
-                <i>
-                    <svg>
-                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#line-btn" />
-                    </svg>
-                </i>
-                <span>view</span>
-            </span>
-        </a>
+                <a href="<?php echo esc_url($link); ?>" class="item-port">
+                    <figure style="background-image: url('<?php echo $image_url; ?>');"></figure>
+                    <span class="item-port_title MercuryDisplayRegular">
+                        <?php echo esc_html($title); ?>
+                    </span>
+                    <span class="bnt-def bnt-def_middle_height btn-def_bor-white">
+                        <i>
+                            <svg>
+                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#line-btn" />
+                            </svg>
+                        </i>
+                        <span>view</span>
+                    </span>
+                </a>
+        <?php
+            endforeach;
+        endif;
+        ?>
     </div>
 </section>
 
@@ -320,12 +283,10 @@
         <div class="container">
             <div class="s-prog_row">
                 <div class="s-prog_des">
-                    <p>We invite you to browse our portfolio of featured listings and case studies
-                        showcasing
-                        our expertise across all commercial real estate sectors.</p>
+                    <?php echo $f_home_portfolio_des; ?>
                 </div>
                 <div class="s-prog_btn">
-                    <a href="#" class="bnt-def bnt-def_bigger  bnt-def_gold">
+                    <a href="<?php echo $f_home_portfolio_lin; ?>" class="bnt-def bnt-def_bigger  bnt-def_gold">
                         <i>
                             <svg>
                                 <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#line-btn" />
@@ -338,22 +299,26 @@
         </div>
     </div>
 
+    <?php
+    $f_home_services_title = get_field('f_home_services_title');
+    $f_home_services_edito = get_field('f_home_services_edito');
+    $f_home_services_link = get_field('f_home_services_link');
+    $services = get_field('f_home_service_repeater_fields');
+    ?>
+
     <section class="s-service">
         <div class="container">
             <div class="s-service__row">
                 <div class="servic-left">
-                    <h2 class="title-2 title_mod FreightDispProBook">Services</h2>
+                    <h2 class="title-2 title_mod FreightDispProBook"><?php echo $f_home_services_title; ?></h2>
                     <div class="s-abo-desc">
-                        <p>We provide a consultative approach to our clients rooted in trust and
-                            confidentiality. ONE Commercial will navigate you through the process and act on
-                            your behalf to secure a favorable outcome in any transaction.</p>
-
+                        <?php echo $f_home_services_edito; ?>
                         <!-- don't show on phone -->
                         <div class="lin-left mob-none"><span></span></div>
                     </div>
                     <!-- don't show on phone -->
                     <div class="servic-left__btn mob-none">
-                        <a href="#" class="bnt-def bnt-def_bigget_height  bnt-def_gold">
+                        <a href="<?php echo $f_home_services_link; ?>" class="bnt-def bnt-def_bigget_height  bnt-def_gold">
                             <i>
                                 <svg>
                                     <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#line-btn" />
@@ -365,36 +330,29 @@
                 </div>
                 <div class="servic-right">
                     <ul class="servis-items">
-                        <li>
-                            <div>
-                                <span>01</span>
-                                <p>Investment Sales & Acquisition</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <span>02</span>
-                                <p>Landlord & Tenant Service</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <span>03</span>
-                                <p>Development Consulting</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <span>04</span>
-                                <p>Valuation & Market Analysis</p>
-                            </div>
-                        </li>
+                        <?php if ($services) :
+                            $i = 1;
+                            foreach ($services as $service) :
+                                $number = str_pad($i, 2, '0', STR_PAD_LEFT);
+                                $name = $service['name'];
+                        ?>
+                                <li>
+                                    <div>
+                                        <span><?php echo $number; ?></span>
+                                        <p><?php echo esc_html($name); ?></p>
+                                    </div>
+                                </li>
+                        <?php
+                                $i++;
+                            endforeach;
+                        endif;
+                        ?>
                     </ul>
                 </div>
 
                 <!-- don't show on pc -->
                 <div class="servic-left__btn pc-none">
-                    <a href="#" class="bnt-def bnt-def_bigget_height  bnt-def_gold">
+                    <a href="<?php echo $f_home_services_link; ?>" class="bnt-def bnt-def_bigget_height  bnt-def_gold">
                         <i>
                             <svg>
                                 <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#line-btn" />
@@ -408,8 +366,12 @@
     </section>
 </div>
 
+<?php
+$f_home_bottom_picture = get_field('f_home_bottom_picture');
+?>
+
 <div class="pos-block-r">
-    <div class="s-imga" style="background-image: url('img/bg-image-full1.jpg');"></div>
+    <div class="s-imga" style="background-image: url('<?php echo $f_home_bottom_picture['url']; ?>');"></div>
     <div class="b-r-s"></div>
     <div class="s-about-fixed">
         <div class="sf-line sf-line_top"></div>

@@ -127,7 +127,7 @@ acf_add_local_field_group([
         ],
         [
             'key' => 'f_ser_title',
-            'label' => 'Title h1',
+            'label' => 'Title',
             'name' => 'f_ser_title',
             'type' => 'text',
         ],

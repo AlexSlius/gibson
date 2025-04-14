@@ -6,14 +6,19 @@
 
 ?>
 
-<?php get_header(); ?>
+<?php get_header();
+
+$f_p_only_bg = get_field('f_p_only_bg');
+$f_p_only_title = get_field('f_p_only_title');
+$f_p_only_sub_title = get_field('f_p_only_sub_title');
+$f_p_only_p = get_field('f_p_only_p');
+?>
 
 <div class="sec-top-page no_bg">
-    <section class="banner-page" style="background-image: url('img/bg-defference.png');">
+    <section class="banner-page" style="background-image: url(<?php echo $f_p_only_bg['url']; ?>)">
         <div class="ban-left">
-            <h1 class="banner-page-title title-2 title_mod FreightDispProBook">Only with ONE</h1>
+            <h1 class="banner-page-title title-2 title_mod FreightDispProBook"><?php echo $f_p_only_title; ?></h1>
             <div class="lin-left"><span></span></div>
-
             <!-- don't show on phone -->
             <div class="banner-page-bot-btn mob-none">
                 <button class="bnt-def bnt-def_bigger bnt-def_while js-btn-open-modal">
@@ -26,14 +31,10 @@
                 </button>
             </div>
         </div>
-
         <div class="banner-box">
-            <div class="banner-box__title MercuryDisplayRoman">With Gibson, excellence is standard, and
-                your<br /> success is our mission.</div>
+            <div class="banner-box__title MercuryDisplayRoman"><?php echo $f_p_only_sub_title; ?></div>
             <div class="lin-left"><span></span></div>
-            <p class="banner-box_des FreightDispProBook">Our unique collaborative approach sets us apart
-                from larger firms, merging the expertise of multiple specialists to deliver tailored
-                solutions that guarantee the best outcomes for your investments. </p>
+            <p class="banner-box_des FreightDispProBook"><?php echo $f_p_only_p; ?></p>
         </div>
     </section>
 
@@ -59,33 +60,40 @@
     </div>
 </div>
 
+<?php
+$f_only_what_title = get_field('f_only_what_title');
+$f_only_what_description = get_field('f_only_what_description');
+$f_only_what_file = get_field('f_only_what_file');
+$f_only_what_img = get_field('f_only_what_img');
+$f_only_what_repeater_fields = get_field('f_only_what_repeater_fields');
+?>
+
 <div class="s-makes">
     <div class="container">
         <div class="s-makes__row">
             <div class="s-makes__left">
-                <h2 class="title-2 title_mod title_uper FreightDispProBook">What makes us different?</h2>
+                <h2 class="title-2 title_mod title_uper FreightDispProBook"><?php echo $f_only_what_title; ?></h2>
                 <!-- don't show pc -->
                 <div class="lin-left pc-none"><span></span></div>
                 <div class="s-makes_des t-def-t">
-                    <p>Our unique collaborative approach sets us apart from larger firms, merging the
-                        expertise of multiple specialists to deliver tailored solutions that guarantee the
-                        best outcomes for your investments.
-                        The reasons clients trust us:</p>
+                    <?php echo $f_only_what_description; ?>
                 </div>
                 <div class="lin-left mob-none"><span></span></div>
                 <div class="s-makes_btn-wr">
-                    <a href="#" class="btn-down" download>
-                        <i>
-                            <svg>
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#icon-download" />
-                            </svg>
-                        </i>
-                        <span>download pdf</span>
-                    </a>
+                    <?php if ($f_only_what_file): ?>
+                        <a href="<?php echo esc_url($f_only_what_file); ?>" class="btn-down" download>
+                            <i>
+                                <svg>
+                                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#icon-download" />
+                                </svg>
+                            </i>
+                            <span>download pdf</span>
+                        </a>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="s-makes__right">
-                <img src="img/img-make.jpg" alt="">
+                <img src="<?php echo $f_only_what_img['url']; ?>" alt="<?php echo $f_only_what_img['alt']; ?>">
             </div>
         </div>
     </div>
@@ -96,82 +104,39 @@
     <div class="s-resurs mob-none">
         <div class="container">
             <div class="resur_row">
-                <div class="item-res">
-                    <div class="item-res_top">
-                        <span class="item-res_number FreightDispProBook">01</span>
-                        <div class="item-res__title MercuryDisplayRegular">Resources</div>
-                        <i class="item-res_i">
-                            <svg>
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
-                            </svg>
-                            <svg>
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
-                            </svg>
-                        </i>
-                    </div>
-                    <div class="item-res_des">
-                        <p>ONE Commercial takes an institutional-level approach, utilizing a vast set of
-                            resources, while still valuing a boutique familial culture in relating to both
-                            agents and clients.</p>
-                    </div>
-                </div>
-                <div class="item-res">
-                    <div class="item-res_top">
-                        <span class="item-res_number FreightDispProBook">02</span>
-                        <div class="item-res__title MercuryDisplayRegular">Resources</div>
-                        <i class="item-res_i">
-                            <svg>
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
-                            </svg>
-                            <svg>
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
-                            </svg>
-                        </i>
-                    </div>
-                    <div class="item-res_des">
-                        <p>ONE Commercial takes an institutional-level approach, utilizing a vast set of
-                            resources, while still valuing a boutique familial culture in relating to both
-                            agents and clients.</p>
-                    </div>
-                </div>
-                <div class="item-res">
-                    <div class="item-res_top">
-                        <span class="item-res_number FreightDispProBook">03</span>
-                        <div class="item-res__title MercuryDisplayRegular">Resources</div>
-                        <i class="item-res_i">
-                            <svg>
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
-                            </svg>
-                            <svg>
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
-                            </svg>
-                        </i>
-                    </div>
-                    <div class="item-res_des">
-                        <p>ONE Commercial takes an institutional-level approach, utilizing a vast set of
-                            resources, while still valuing a boutique familial culture in relating to both
-                            agents and clients.</p>
-                    </div>
-                </div>
-                <div class="item-res">
-                    <div class="item-res_top">
-                        <span class="item-res_number FreightDispProBook">04</span>
-                        <div class="item-res__title MercuryDisplayRegular">Resources</div>
-                        <i class="item-res_i">
-                            <svg>
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
-                            </svg>
-                            <svg>
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
-                            </svg>
-                        </i>
-                    </div>
-                    <div class="item-res_des">
-                        <p>ONE Commercial takes an institutional-level approach, utilizing a vast set of
-                            resources, while still valuing a boutique familial culture in relating to both
-                            agents and clients.</p>
-                    </div>
-                </div>
+                <?php if (have_rows('f_only_what_repeater_fields')): ?>
+                    <?php $index = 1; ?>
+                    <?php while (have_rows('f_only_what_repeater_fields')): the_row();
+                        $name = get_sub_field('name');
+                        $description = get_sub_field('description');
+                    ?>
+                        <div class="item-res">
+                            <div class="item-res_top">
+                                <span class="item-res_number FreightDispProBook">
+                                    <?php echo str_pad($index, 2, '0', STR_PAD_LEFT); ?>
+                                </span>
+                                <div class="item-res__title MercuryDisplayRegular">
+                                    <?php echo esc_html($name); ?>
+                                </div>
+                                <i class="item-res_i">
+                                    <svg>
+                                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
+                                    </svg>
+                                    <svg>
+                                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
+                                    </svg>
+                                </i>
+                            </div>
+                            <div class="item-res_des">
+                                <?php if ($description): ?>
+                                    <p><?php echo $description; ?></p>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                        <?php $index++; ?>
+                    <?php endwhile; ?>
+                <?php endif; ?>
+
             </div>
         </div>
     </div>
@@ -179,945 +144,123 @@
     <!-- don't show om pc -->
     <div class="servises-mob">
         <div class="container">
-            <div class="item-serv-mob js-item-serv-mob">
-                <div class="item-serv-mob_top js-top-ser-mob">
-                    <span class="FreightDispProBook">01</span>
-                    <div class="item-serv-mob_title MercuryDisplayRoman">Resources</div>
-                    <i class="item-serv-mob_i">
-                        <svg>
-                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
-                        </svg>
-                        <svg>
-                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
-                        </svg>
-                    </i>
-                </div>
-                <div class="item-serv-mob_bot "
-                    style="overflow: hidden; height: 0; transition: height 0.3s ease;">
-                    <p>We specialize in assisting investors with the acquisition and disposition of
-                        commercial properties.
-                        Through data-driven analysis and strategic marketing, we maximize property values
-                        and identify lucrative investment opportunities.</p>
-                </div>
-            </div>
-
-            <div class="item-serv-mob js-item-serv-mob">
-                <div class="item-serv-mob_top js-top-ser-mob">
-                    <span class="FreightDispProBook">02</span>
-                    <div class="item-serv-mob_title MercuryDisplayRoman">Innovation</div>
-                    <i class="item-serv-mob_i">
-                        <svg>
-                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
-                        </svg>
-                        <svg>
-                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
-                        </svg>
-                    </i>
-                </div>
-                <div class="item-serv-mob_bot "
-                    style="overflow: hidden; height: 0; transition: height 0.3s ease;">
-                    <p>We specialize in assisting investors with the acquisition and disposition of
-                        commercial properties.
-                        Through data-driven analysis and strategic marketing, we maximize property values
-                        and identify lucrative investment opportunities.</p>
-                </div>
-            </div>
-
-            <div class="item-serv-mob js-item-serv-mob">
-                <div class="item-serv-mob_top js-top-ser-mob">
-                    <span class="FreightDispProBook">03</span>
-                    <div class="item-serv-mob_title MercuryDisplayRoman">Execution</div>
-                    <i class="item-serv-mob_i">
-                        <svg>
-                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
-                        </svg>
-                        <svg>
-                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
-                        </svg>
-                    </i>
-                </div>
-                <div class="item-serv-mob_bot "
-                    style="overflow: hidden; height: 0; transition: height 0.3s ease;">
-                    <p>We specialize in assisting investors with the acquisition and disposition of
-                        commercial properties.
-                        Through data-driven analysis and strategic marketing, we maximize property values
-                        and identify lucrative investment opportunities.</p>
-                </div>
-            </div>
-
-            <div class="item-serv-mob js-item-serv-mob">
-                <div class="item-serv-mob_top js-top-ser-mob">
-                    <span class="FreightDispProBook">04</span>
-                    <div class="item-serv-mob_title MercuryDisplayRoman">Global network</div>
-                    <i class="item-serv-mob_i">
-                        <svg>
-                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
-                        </svg>
-                        <svg>
-                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
-                        </svg>
-                    </i>
-                </div>
-                <div class="item-serv-mob_bot "
-                    style="overflow: hidden; height: 0; transition: height 0.3s ease;">
-                    <p>We specialize in assisting investors with the acquisition and disposition of
-                        commercial properties.
-                        Through data-driven analysis and strategic marketing, we maximize property values
-                        and identify lucrative investment opportunities.</p>
-                </div>
-            </div>
+            <?php if (have_rows('f_only_what_repeater_fields')): ?>
+                <?php $index = 1; ?>
+                <?php while (have_rows('f_only_what_repeater_fields')): the_row();
+                    $name = get_sub_field('name');
+                    $description = get_sub_field('description');
+                ?>
+                    <div class="item-serv-mob js-item-serv-mob">
+                        <div class="item-serv-mob_top js-top-ser-mob">
+                            <span class="FreightDispProBook">
+                                <?php echo str_pad($index, 2, '0', STR_PAD_LEFT); ?>
+                            </span>
+                            <div class="item-serv-mob_title MercuryDisplayRoman">
+                                <?php echo esc_html($name); ?>
+                            </div>
+                            <i class="item-serv-mob_i">
+                                <svg>
+                                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
+                                </svg>
+                                <svg>
+                                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
+                                </svg>
+                            </i>
+                        </div>
+                        <div class="item-serv-mob_bot"
+                            style="overflow: hidden; height: 0; transition: height 0.3s ease;">
+                            <?php if ($description): ?>
+                                <p><?php echo $description; ?></p>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <?php $index++; ?>
+                <?php endwhile; ?>
+            <?php endif; ?>
         </div>
     </div>
 
+    <?php
+    $f_only_resources_title = get_field('f_only_resources_title');
+    $f_only_resources_repeater = get_field('f_only_resources_repeater');
+
+    ?>
+
     <section class="s-h-res">
-        <div class="res-row">
-            <div class="res_cont">
-                <h2 class="title-2 title_mod FreightDispProBook">Resources</h2>
-                <div class="res_des MercuryDisplayRoman">
-                    <p>Gipson is a boutique brokerage with institutional quality support. Despite our
-                        institutional-level approach, we still
-                        value a boutique familial culture in relating to both
-                        agents and clients.</p>
+        <?php if (have_rows('f_only_resources_repeater')): ?>
+            <?php $i = 0; ?>
+            <?php while (have_rows('f_only_resources_repeater')): the_row();
+                $description = get_sub_field('description');
+                $image = get_sub_field('img'); // це масив, якщо return format — масив
+                $img_url = is_array($image) ? $image['url'] : $image; // на випадок, якщо повертається URL
+                $row_class = $i % 2 === 1 ? 'res-row res-row_reverse' : 'res-row';
+            ?>
+                <div class="<?php echo esc_attr($row_class); ?>">
+                    <div class="res_cont">
+                        <?php if ($i === 0 && !empty($f_only_resources_title)): ?>
+                            <h2 class="title-2 title_mod FreightDispProBook"><?php echo esc_html($f_only_resources_title); ?></h2>
+                        <?php endif; ?>
+                        <div class="res_des MercuryDisplayRoman">
+                            <?php echo $description; ?>
+                        </div>
+                    </div>
+                    <div class="res_img">
+                        <?php if ($img_url): ?>
+                            <img src="<?php echo esc_url($img_url); ?>" alt="">
+                        <?php endif; ?>
+                    </div>
                 </div>
-            </div>
-            <div class="res_img">
-                <img src="img/res-img-1.jpg" alt="">
-            </div>
-        </div>
-
-        <div class="res-row res-row_reverse">
-            <div class="res_cont">
-                <div class="res_des MercuryDisplayRoman">
-                    <p>Gipson takes an innovative takes an innovative approach to market intelligence and
-                        customized marketing services</p>
-                </div>
-            </div>
-            <div class="res_img">
-                <img src="img/res-img-2.jpg" alt="">
-            </div>
-        </div>
-
-        <div class="res-row">
-            <div class="res_cont">
-                <div class="res_des MercuryDisplayRoman">
-                    <p>We execute differently.
-                        Our goal is to always keep our agents top-of-mind.</p>
-                </div>
-            </div>
-            <div class="res_img">
-                <img src="img/res-img-3.jpg" alt="">
-            </div>
-        </div>
-
-        <div class="res-row res-row_reverse">
-            <div class="res_cont">
-                <div class="res_des MercuryDisplayRoman">
-                    <p>Our symbiotic relationship with the ONE Sotheby’s International Realty network gives
-                        us global reach.</p>
-                </div>
-            </div>
-            <div class="res_img">
-                <img src="img/res-img-4.jpg" alt="">
-            </div>
-        </div>
+                <?php $i++; ?>
+            <?php endwhile; ?>
+        <?php endif; ?>
     </section>
 </div>
+
+<?php
+$f_only_innovation_title = get_field('f_only_innovation_title');
+?>
 
 <div class="s-innovati js-swiper-cop">
     <div class="container">
-        <h2 class="title-2 title_mod FreightDispProBook">Innovation</h2>
+        <h2 class="title-2 title_mod FreightDispProBook"><?php echo $f_only_innovation_title; ?></h2>
     </div>
     <div class="s-innovati__wr">
         <div class="container ">
-            <div class="innovati_row">
-                <div class="innovati_imgs">
-                    <img class="js-img-innow active" data-index="0" src="img/img-inivation-1.png" alt="">
-                    <img class="js-img-innow" data-index="1" src="img/img-inivation-2.png" alt="">
-                    <img class="js-img-innow" data-index="2" src="img/img-inivation-3.png" alt="">
-                </div>
-
-                <div class="innovati_slider">
-                    <div class="swiper js-swipre-innov">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="innovati_title FreightDispProBook">Market Intelligence &
-                                    Analytical Support</div>
-                                <div class="innovati_des">
-                                    <p>Market Intelligence Analytical Support
-                                        The Intelligence Department is constantly keeping an eye on the
-                                        ever-changing real estate market. With this knowledge, our agents
-                                        and clients can rest assured that our advice is guided by a
-                                        comprehensive understanding of the current real estate market and
-                                        are armed with the best-in-class analytical support. </p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="innovati_title FreightDispProBook">Technology Suite</div>
-                                <div class="innovati_des">
-                                    <p>Market Intelligence Analytical Support
-                                        The Intelligence Department is constantly keeping an eye on the
-                                        ever-changing real estate market. With this knowledge, our agents
-                                        and clients can rest assured that our advice is guided by a
-                                        comprehensive understanding of the current real estate market and
-                                        are armed with the best-in-class analytical support. </p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="innovati_title FreightDispProBook">Marketplace Exposure </div>
-                                <div class="innovati_des">
-                                    <p>We offer intelligent marketing to get the maximum exposure for your
-                                        property easily and effectively.</p>
-                                    <p>Our multifaceted marketing approach begins with Costar/LoopNet. 82%
-                                        of tenants and investors report they will search for their next
-                                        space online, which is why LoopNet has 10 million unique visitors
-                                        every month. </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="custom-navigation">
-                        <button class="custom-s-btn custom-prev js-custom-prev-innov">
-                            <svg>
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#s_left-arrow" />
-                            </svg>
-                        </button>
-                        <div class="custom-pagination js-custom-pagination-innov"></div>
-                        <button class="custom-s-btn js-custom-next-innov custom-next">
-                            <svg>
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#s_right-arrow" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="s-innovati s-execution js-swiper-cop">
-    <div class="container">
-        <h2 class="title-2 title_mod FreightDispProBook">Execution</h2>
-    </div>
-    <div class="s-innovati__wr">
-        <div class="container ">
-            <div class="innovati_row">
-                <div class="innovati_imgs">
-                    <img class="js-img-innow active" data-index="0" src="img/img-execution-1.png" alt="">
-                    <img class="js-img-innow" data-index="1" src="img/img-execution-2.png" alt="">
-                    <img class="js-img-innow" data-index="2" src="img/img-execution-3.png" alt="">
-                </div>
-
-                <div class="innovati_slider">
-                    <div class="swiper js-swipre-innov">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="innovati_title FreightDispProBook">Public Relations Impact</div>
-                                <div class="innovati_des">
-                                    <p>Our public relations efforts position Gipson Real Estate as southern
-                                        and central Florida's premier boutique commercial real estate
-                                        company.<br />
-                                        If desired by seller, Gipson will submit notable transactions to our
-                                        dedicated PR firm to be published in the leading industry news
-                                        sources. This exposure helps keep our brand and our agents
-                                        top-of-mind with investors. This exposure also drives buyers to our
-                                        website to view the exceptional properties we represent. </p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="innovati_title FreightDispProBook">Online Presence & Social
-                                    Media </div>
-                                <div class="innovati_des">
-                                    <p>Gipson invests in high-end website design and development in order to
-                                        position your property in the best light. By ensuring an excellent
-                                        user experience and smooth functionality, we eliminate any
-                                        distractions from your quality asset.
-
-                                        A strong social media presence has never been more valuable. Gipson
-                                        values and creates exclusive, custom-designed content to encourage
-                                        connections and engagement with like-minded CRE professionals,
-                                        buyers, and sellers. </p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="innovati_title FreightDispProBook">Purpose-Driven Marketing
-                                    Services </div>
-                                <div class="innovati_des">
-                                    <p>Our Marketing Department works one-on-one with
-                                        our agents and clients to design compelling marketing collateral.
-                                        All listing flyers, offering memorandums, direct mailers, and case
-                                        studies are entirely unique pieces catering to the needs of the
-                                        client and the
-                                        strengths of the property. </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="custom-navigation custom-navigation_blue">
-                        <button class="custom-s-btn custom-prev js-custom-prev-innov">
-                            <svg>
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#s_left-arrow-blue" />
-                            </svg>
-                        </button>
-                        <div class="custom-pagination js-custom-pagination-innov"></div>
-                        <button class="custom-s-btn js-custom-next-innov custom-next">
-                            <svg>
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#s_right-arrow-blue" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="bg-ou-big">
-    <!-- don't show phone-->
-    <div class="gibson-left-our mob-none">
-        <div class="gibson-left-our_name FreightDispProBook">GIBSON</div>
-    </div>
-
-    <div class="social-media">
-        <div class="container">
-            <div class="social-media_row">
-                <div class="social-media_title FreightDispProBook">SOCIAL Media <br /> Status</div>
-
-                <!-- don't show phone-->
-                <div class="social-media_items  mob-none">
-                    <div class="item-media-soc">
-                        <div class="item-media-soc__icon">
-                            <svg>
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#icon-sc-in-gold" />
-                            </svg>
-                        </div>
-                        <div class="item-media-soc__wre">
-                            <div>
-                                <div class="item-media-soc__col FreightDispProBook">17<span>%</span></div>
-                                <div class="item-media-soc__p item-media-soc__p_m">Follower increace</div>
-                            </div>
-                            <div>
-                                <div class="item-media-soc__col FreightDispProBook">209<span>k+</span></div>
-                                <div class="item-media-soc__p">Impressions</div>
-                            </div>
-                        </div>
-
-                        <a href="#"></a>
-                    </div>
-
-                    <div class="item-media-soc">
-                        <div class="item-media-soc__icon">
-                            <svg>
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#icon-sc-fb-gold" />
-                            </svg>
-                        </div>
-                        <div class="item-media-soc__wre">
-                            <div>
-                                <div class="item-media-soc__col FreightDispProBook">155<span>%</span></div>
-                                <div class="item-media-soc__p item-media-soc__p_m">Growth in pager likes
-                                </div>
-                            </div>
-                            <div>
-                                <div class="item-media-soc__col FreightDispProBook">255<span>k+</span></div>
-                                <div class="item-media-soc__p">Impressions</div>
-                            </div>
-                        </div>
-
-                        <a href="#"></a>
-                    </div>
-
-                    <div class="item-media-soc">
-                        <div class="item-media-soc__icon">
-                            <svg>
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#icon-sc-int-gold" />
-                            </svg>
-                        </div>
-                        <div class="item-media-soc__wre">
-                            <div>
-                                <div class="item-media-soc__col FreightDispProBook">405<span>%</span></div>
-                                <div class="item-media-soc__p item-media-soc__p_m">Follower increace</div>
-                            </div>
-                            <div>
-                                <div class="item-media-soc__col FreightDispProBook">15<span>k+</span></div>
-                                <div class="item-media-soc__p">Impressions</div>
-                            </div>
-                        </div>
-
-                        <a href="#"></a>
-                    </div>
-                </div>
-
-                <!-- don't show on pc -->
-                <div class="social-media_it-mob pc-none">
-                    <div class="swiper js-swipre-social-mob">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="item-media-soc">
-                                    <div class="item-media-soc__icon">
-                                        <svg>
-                                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#icon-sc-in-gold" />
-                                        </svg>
-                                    </div>
-                                    <div class="item-media-soc__wre">
-                                        <div>
-                                            <div class="item-media-soc__col FreightDispProBook">
-                                                17<span>%</span></div>
-                                            <div class="item-media-soc__p item-media-soc__p_m">Follower
-                                                increace</div>
-                                        </div>
-                                        <div>
-                                            <div class="item-media-soc__col FreightDispProBook">
-                                                209<span>k+</span></div>
-                                            <div class="item-media-soc__p">Impressions</div>
-                                        </div>
-                                    </div>
-
-                                    <a href="#"></a>
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide">
-                                <div class="item-media-soc">
-                                    <div class="item-media-soc__icon">
-                                        <svg>
-                                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#icon-sc-fb-gold" />
-                                        </svg>
-                                    </div>
-                                    <div class="item-media-soc__wre">
-                                        <div>
-                                            <div class="item-media-soc__col FreightDispProBook">
-                                                155<span>%</span></div>
-                                            <div class="item-media-soc__p item-media-soc__p_m">Growth in
-                                                pager likes
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="item-media-soc__col FreightDispProBook">
-                                                255<span>k+</span></div>
-                                            <div class="item-media-soc__p">Impressions</div>
-                                        </div>
-                                    </div>
-
-                                    <a href="#"></a>
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide">
-                                <div class="item-media-soc">
-                                    <div class="item-media-soc__icon">
-                                        <svg>
-                                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#icon-sc-int-gold" />
-                                        </svg>
-                                    </div>
-                                    <div class="item-media-soc__wre">
-                                        <div>
-                                            <div class="item-media-soc__col FreightDispProBook">
-                                                405<span>%</span></div>
-                                            <div class="item-media-soc__p item-media-soc__p_m">Follower
-                                                increace</div>
-                                        </div>
-                                        <div>
-                                            <div class="item-media-soc__col FreightDispProBook">
-                                                15<span>k+</span></div>
-                                            <div class="item-media-soc__p">Impressions</div>
-                                        </div>
-                                    </div>
-
-                                    <a href="#"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="custom-navigation custom-navigation_blue">
-                        <div class="custom-pagination js-custom-pagination-social-mob"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <section class="gloval-serv">
-        <div class="container">
-            <h2 class="title-2 title_mod  FreightDispProBook">A Consultative Approach</h2>
-
-            <!-- don't show om pc -->
-            <div class="servises-mob">
-                <div class="item-serv-mob js-item-serv-mob">
-                    <div class="item-serv-mob_top js-top-ser-mob">
-                        <span class="FreightDispProBook">01</span>
-                        <div class="item-serv-mob_title MercuryDisplayRoman">Initial Consultation & Goal
-                            Setting</div>
-                        <i class="item-serv-mob_i">
-                            <svg>
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
-                            </svg>
-                            <svg>
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
-                            </svg>
-                        </i>
-                    </div>
-                    <div class="item-serv-mob_bot "
-                        style="overflow: hidden; height: 0; transition: height 0.3s ease;">
-                        <p>We specialize in assisting investors with the acquisition and disposition of
-                            commercial properties.
-                            Through data-driven analysis and strategic marketing, we maximize property
-                            values
-                            and identify lucrative investment opportunities.</p>
-                    </div>
-                </div>
-
-                <div class="item-serv-mob js-item-serv-mob">
-                    <div class="item-serv-mob_top js-top-ser-mob">
-                        <span class="FreightDispProBook">02</span>
-                        <div class="item-serv-mob_title MercuryDisplayRoman">Market Research & Property
-                            Analysis</div>
-                        <i class="item-serv-mob_i">
-                            <svg>
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
-                            </svg>
-                            <svg>
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
-                            </svg>
-                        </i>
-                    </div>
-                    <div class="item-serv-mob_bot "
-                        style="overflow: hidden; height: 0; transition: height 0.3s ease;">
-                        <p>We specialize in assisting investors with the acquisition and disposition of
-                            commercial properties.
-                            Through data-driven analysis and strategic marketing, we maximize property
-                            values
-                            and identify lucrative investment opportunities.</p>
-                    </div>
-                </div>
-
-                <div class="item-serv-mob js-item-serv-mob">
-                    <div class="item-serv-mob_top js-top-ser-mob">
-                        <span class="FreightDispProBook">03</span>
-                        <div class="item-serv-mob_title MercuryDisplayRoman">Customized Strategy Development
-                        </div>
-                        <i class="item-serv-mob_i">
-                            <svg>
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
-                            </svg>
-                            <svg>
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
-                            </svg>
-                        </i>
-                    </div>
-                    <div class="item-serv-mob_bot "
-                        style="overflow: hidden; height: 0; transition: height 0.3s ease;">
-                        <p>We specialize in assisting investors with the acquisition and disposition of
-                            commercial properties.
-                            Through data-driven analysis and strategic marketing, we maximize property
-                            values
-                            and identify lucrative investment opportunities.</p>
-                    </div>
-                </div>
-
-                <div class="item-serv-mob js-item-serv-mob">
-                    <div class="item-serv-mob_top js-top-ser-mob">
-                        <span class="FreightDispProBook">04</span>
-                        <div class="item-serv-mob_title MercuryDisplayRoman">Targeted Marketing & Outreach
-                        </div>
-                        <i class="item-serv-mob_i">
-                            <svg>
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
-                            </svg>
-                            <svg>
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
-                            </svg>
-                        </i>
-                    </div>
-                    <div class="item-serv-mob_bot "
-                        style="overflow: hidden; height: 0; transition: height 0.3s ease;">
-                        <p>We specialize in assisting investors with the acquisition and disposition of
-                            commercial properties.
-                            Through data-driven analysis and strategic marketing, we maximize property
-                            values
-                            and identify lucrative investment opportunities.</p>
-                    </div>
-                </div>
-
-                <div class="item-serv-mob js-item-serv-mob">
-                    <div class="item-serv-mob_top js-top-ser-mob">
-                        <span class="FreightDispProBook">05</span>
-                        <div class="item-serv-mob_title MercuryDisplayRoman">Expert Negotiation & Deal
-                            Structuring</div>
-                        <i class="item-serv-mob_i">
-                            <svg>
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
-                            </svg>
-                            <svg>
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
-                            </svg>
-                        </i>
-                    </div>
-                    <div class="item-serv-mob_bot "
-                        style="overflow: hidden; height: 0; transition: height 0.3s ease;">
-                        <p>We specialize in assisting investors with the acquisition and disposition of
-                            commercial properties.
-                            Through data-driven analysis and strategic marketing, we maximize property
-                            values
-                            and identify lucrative investment opportunities.</p>
-                    </div>
-                </div>
-
-                <div class="item-serv-mob js-item-serv-mob">
-                    <div class="item-serv-mob_top js-top-ser-mob">
-                        <span class="FreightDispProBook">06</span>
-                        <div class="item-serv-mob_title MercuryDisplayRoman">Transaction Management &
-                            Closing Coordination</div>
-                        <i class="item-serv-mob_i">
-                            <svg>
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
-                            </svg>
-                            <svg>
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
-                            </svg>
-                        </i>
-                    </div>
-                    <div class="item-serv-mob_bot "
-                        style="overflow: hidden; height: 0; transition: height 0.3s ease;">
-                        <p>We specialize in assisting investors with the acquisition and disposition of
-                            commercial properties.
-                            Through data-driven analysis and strategic marketing, we maximize property
-                            values
-                            and identify lucrative investment opportunities.</p>
-                    </div>
-                </div>
-
-                <div class="item-serv-mob js-item-serv-mob">
-                    <div class="item-serv-mob_top js-top-ser-mob">
-                        <span class="FreightDispProBook">07</span>
-                        <div class="item-serv-mob_title MercuryDisplayRoman">Post-Transaction Support &
-                            Asset Optimization</div>
-                        <i class="item-serv-mob_i">
-                            <svg>
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
-                            </svg>
-                            <svg>
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
-                            </svg>
-                        </i>
-                    </div>
-                    <div class="item-serv-mob_bot "
-                        style="overflow: hidden; height: 0; transition: height 0.3s ease;">
-                        <p>We specialize in assisting investors with the acquisition and disposition of
-                            commercial properties.
-                            Through data-driven analysis and strategic marketing, we maximize property
-                            values
-                            and identify lucrative investment opportunities.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- don't show phone-->
-            <div class="servises-items mob-none">
-                <div class="items-ser">
-                    <div class="item-ser js-item-ser active" data-item="1">
-                        <div class="item-ser_wr">
-                            <span class="FreightDispProBook">01</span>
-                            <div class="item-ser__title MercuryDisplayRoman">Initial Consultation & Goal
-                                Setting
-                            </div>
-                            <i class="item-ser_i">
-                                <svg>
-                                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
-                                </svg>
-                                <svg>
-                                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
-                                </svg>
-                            </i>
-                        </div>
-                    </div>
-
-                    <div class="item-ser js-item-ser" data-item="2">
-                        <div class="item-ser_wr">
-                            <span class="FreightDispProBook">02</span>
-                            <div class="item-ser__title MercuryDisplayRoman">Market Research & Property
-                                Analysis
-                            </div>
-                            <i class="item-ser_i">
-                                <svg>
-                                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
-                                </svg>
-                                <svg>
-                                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
-                                </svg>
-                            </i>
-                        </div>
-                    </div>
-
-                    <div class="item-ser js-item-ser" data-item="3">
-                        <div class="item-ser_wr">
-                            <span class="FreightDispProBook">03</span>
-                            <div class="item-ser__title MercuryDisplayRoman">Customized Strategy Development
-                            </div>
-                            <i class="item-ser_i">
-                                <svg>
-                                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
-                                </svg>
-                                <svg>
-                                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
-                                </svg>
-                            </i>
-                        </div>
-                    </div>
-
-                    <div class="item-ser js-item-ser" data-item="4">
-                        <div class="item-ser_wr">
-                            <span class="FreightDispProBook">04</span>
-                            <div class="item-ser__title MercuryDisplayRoman">Targeted Marketing & Outreach
-                            </div>
-                            <i class="item-ser_i">
-                                <svg>
-                                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
-                                </svg>
-                                <svg>
-                                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
-                                </svg>
-                            </i>
-                        </div>
-                    </div>
-
-                    <div class="item-ser js-item-ser" data-item="5">
-                        <div class="item-ser_wr">
-                            <span class="FreightDispProBook">05</span>
-                            <div class="item-ser__title MercuryDisplayRoman">Expert Negotiation & Deal
-                                Structuring</div>
-                            <i class="item-ser_i">
-                                <svg>
-                                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
-                                </svg>
-                                <svg>
-                                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
-                                </svg>
-                            </i>
-                        </div>
-                    </div>
-
-                    <div class="item-ser js-item-ser" data-item="6">
-                        <div class="item-ser_wr">
-                            <span class="FreightDispProBook">06</span>
-                            <div class="item-ser__title MercuryDisplayRoman">Transaction Management &
-                                Closing
-                                Coordination</div>
-                            <i class="item-ser_i">
-                                <svg>
-                                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
-                                </svg>
-                                <svg>
-                                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
-                                </svg>
-                            </i>
-                        </div>
-                    </div>
-
-                    <div class="item-ser js-item-ser" data-item="7">
-                        <div class="item-ser_wr">
-                            <span class="FreightDispProBook">07</span>
-                            <div class="item-ser__title MercuryDisplayRoman">Post-Transaction Support &
-                                Asset
-                                Optimization</div>
-                            <i class="item-ser_i">
-                                <svg>
-                                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
-                                </svg>
-                                <svg>
-                                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
-                                </svg>
-                            </i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-cervis">
-                    <div class="card-s js-card-s active" data-item="1">
-                        <div class="card-s__title MercuryDisplayRegular">Initial Consultation & Goal Setting
-                        </div>
-                        <div class="lin-left"><span></span></div>
-                        <div class="card-s_des">
-                            <p>Our process begins with an in-depth discussion to fully understand your
-                                objectives. Whether you are looking to buy, sell, lease, or develop
-                                commercial real estate, we tailor our approach to align with your goals.</p>
-                        </div>
-                        <div class="card-s_img">
-                            <img src="img/img-card-s-1.jpg" alt="img">
-                        </div>
-                    </div>
-
-                    <div class="card-s js-card-s " data-item="2">
-                        <div class="card-s__title MercuryDisplayRegular">Market Research & Property Analysis
-                        </div>
-                        <div class="lin-left"><span></span></div>
-                        <div class="card-s_des">
-                            <p>We conduct a detailed analysis of market conditions, trends, comparable
-                                sales,
-                                and property
-                                performance to ensure well-informed decision-making. This research serves as
-                                the
-                                foundation
-                                for our strategic recommendations</p>
-                        </div>
-                        <div class="card-s_img">
-                            <img src="img/img-card-s-2.jpg" alt="img">
-                        </div>
-                    </div>
-
-                    <div class="card-s js-card-s " data-item="3">
-                        <div class="card-s__title MercuryDisplayRegular">Customized Strategy Development
-                        </div>
-                        <div class="lin-left"><span></span></div>
-                        <div class="card-s_des">
-                            <p>Based on our findings, we create a personalized roadmap designed to optimize
-                                outcomes. -Whether you require aggressive marketing for a sale or a precise
-                                site
-                                selection process for an
-                                acquisition, we ensure every step is strategically planned.</p>
-                        </div>
-                        <div class="card-s_img">
-                            <img src="img/img-card-s-3.jpg" alt="img">
-                        </div>
-                    </div>
-
-                    <div class="card-s js-card-s " data-item="4">
-                        <div class="card-s__title MercuryDisplayRegular">Expert Negotiation & Deal
-                            Structuring
-                        </div>
-                        <div class="lin-left"><span></span></div>
-                        <div class="card-s_des">
-                            <p>Our team of skilled negotiators advocates for your best interests, securing
-                                optimal terms that align with your financial and operational goals. We
-                                handle
-                                contract negotiations, financing
-                                structures, and due diligence with precision.</p>
-                        </div>
-                        <div class="card-s_img">
-                            <img src="img/img-card-s-4.jpg" alt="img">
-                        </div>
-                    </div>
-
-                    <div class="card-s js-card-s " data-item="5">
-                        <div class="card-s__title MercuryDisplayRegular">Targeted Marketing & Outreach</div>
-                        <div class="lin-left"><span></span></div>
-                        <div class="card-s_des">
-                            <p>For sellers and landlords, we craft high-impact marketing campaigns utilizing
-                                professional photography, digital advertising, international investor
-                                outreach,
-                                and private client networks to
-                                attract premium buyers and tenants.</p>
-                        </div>
-                        <div class="card-s_img">
-                            <img src="img/img-card-s-5.jpg" alt="img">
-                        </div>
-                    </div>
-
-                    <div class="card-s js-card-s " data-item="6">
-                        <div class="card-s__title MercuryDisplayRegular">Transaction Management & Closing
-                            Coordination </div>
-                        <div class="lin-left"><span></span></div>
-                        <div class="card-s_des">
-                            <p>We oversee every aspect of the transaction process, coordinating with legal
-                                teams, lenders, inspectors, and all involved parties to ensure a smooth,
-                                timely,
-                                and successful closing.</p>
-                        </div>
-                        <div class="card-s_img">
-                            <img src="img/img-card-s-6.jpg" alt="img">
-                        </div>
-                    </div>
-
-                    <div class="card-s js-card-s" data-item="7">
-                        <div class="card-s__title MercuryDisplayRegular">Post-Transaction Support & Asset
-                            Optimization</div>
-                        <div class="lin-left"><span></span></div>
-                        <div class="card-s_des">
-                            <p>Our commitment to clients extends beyond deal closure. We offer continued
-                                support
-                                with asset management strategies, repositioning guidance, lease-up
-                                strategies,
-                                and long-terminvestment planning.</p>
-                        </div>
-                        <div class="card-s_img">
-                            <img src="img/img-card-s-6.jpg" alt="img">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="s-innovati s-blobals js-swiper-cop">
-        <div class="container">
-            <h2 class="title-2 title_mod FreightDispProBook">Global connection</h2>
-        </div>
-        <div class="s-innovati__wr">
-            <div class="container ">
+            <?php if (have_rows('f_only_innovation_repeat_fields')): ?>
                 <div class="innovati_row">
                     <div class="innovati_imgs">
-                        <div class="innovati_wr_img innovati_wr_img-type-1 js-img-innow active"
-                            data-index="0">
-                            <div class="innovati_img">
-                                <img src="img/img-global-1.png" alt="">
-                            </div>
-                            <div class="sales-se">
-                                <div class="sales-se_in">
-                                    <span class="sales-se_number FreightDispProBook">$8.1B</span>
-                                    <span class="sales-se_t">In annual sales</span>
-                                </div>
-                                <div class="lin-left"><span></span></div>
-                            </div>
-                        </div>
-
-                        <div class="innovati_wr_img innovati_wr_img-type-2 js-img-innow" data-index="1">
-                            <div class="innovati_img ">
-                                <img src="img/img-global-2.png" alt="">
-                            </div>
-                        </div>
+                        <?php $img_index = 0; ?>
+                        <?php while (have_rows('f_only_innovation_repeat_fields')): the_row();
+                            $image = get_sub_field('image');
+                            $img_url = is_array($image) ? $image['url'] : $image;
+                        ?>
+                            <?php if ($img_url): ?>
+                                <img
+                                    class="js-img-innow <?php echo $img_index === 0 ? 'active' : ''; ?>"
+                                    data-index="<?php echo esc_attr($img_index); ?>"
+                                    src="<?php echo esc_url($img_url); ?>"
+                                    alt="">
+                            <?php endif; ?>
+                            <?php $img_index++; ?>
+                        <?php endwhile; ?>
                     </div>
 
                     <div class="innovati_slider">
                         <div class="swiper js-swipre-innov">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="innovati_title FreightDispProBook">Unmatched Network Global
-                                        Reach </div>
-                                    <div class="innovati_des">
-                                        <p>Gipson leverages relationships within the ONE Sotheby's
-                                            International
-                                            Realty luxury residential real estate network to connect
-                                            prestigious
-                                            clientele spanning the globe with the assets we represent. We
-                                            manage
-                                            these opportunities with extreme care to ensure impeccable,
-                                            white-glove service and maintain an interconnected network to
-                                            expeditiously bring you the most qualified buyers.</p>
-                                        <p>All Gipson property listings are shared with the ONE Sotheby's
-                                            network via e-blasts, sales/networking events, and the ONE
-                                            Sotheby's
-                                            "Weekly Digest" (audience of 30,000).</p>
+                                <?php while (have_rows('f_only_innovation_repeat_fields')): the_row();
+                                    $title = get_sub_field('name');
+                                    $description = get_sub_field('description');
+                                ?>
+                                    <div class="swiper-slide">
+                                        <div class="innovati_title FreightDispProBook">
+                                            <?php echo esc_html($title); ?>
+                                        </div>
+                                        <div class="innovati_des">
+                                            <?php echo $description; ?>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="innovati_title FreightDispProBook">Events & Sponsorships
-                                    </div>
-                                    <div class="innovati_des">
-                                        <p>Gipson values the importance of networking. Quarterly sales
-                                            meetings
-                                            with ONE Sotheby's foster a collaborative environment in which
-                                            to
-                                            mingle and discuss cross-over projects and referral business.
-                                            Additionally, </p>
-                                        <p>Gipson agents regularly attend industry events to expand their
-                                            knowledge through invaluable initiatives and discussions
-                                            impacting
-                                            the industry.</p>
-                                        <p>Gipson also invests in sponsorship opportunities to keep the
-                                            brand
-                                            foremost for clients and colleagues.</p>
-                                    </div>
-                                </div>
+                                <?php endwhile; ?>
                             </div>
                         </div>
 
@@ -1136,6 +279,340 @@
                         </div>
                     </div>
                 </div>
+            <?php endif; ?>
+
+        </div>
+    </div>
+</div>
+
+<div class="s-innovati s-execution js-swiper-cop">
+    <div class="container">
+        <h2 class="title-2 title_mod FreightDispProBook"><?php echo get_field('f_only_exection_title'); ?></h2>
+    </div>
+    <div class="s-innovati__wr">
+        <div class="container ">
+            <?php if (have_rows('f_only_exection_repeat_fields')) : ?>
+                <div class="innovati_row">
+                    <div class="innovati_imgs">
+                        <?php $img_index = 0; ?>
+                        <?php while (have_rows('f_only_exection_repeat_fields')) : the_row(); ?>
+                            <?php
+                            $image = get_sub_field('image');
+                            if ($image):
+                            ?>
+                                <img
+                                    class="js-img-innow <?php echo ($img_index === 0) ? 'active' : ''; ?>"
+                                    data-index="<?php echo esc_attr($img_index); ?>"
+                                    src="<?php echo esc_url($image['url']); ?>"
+                                    alt="<?php echo esc_attr($image['alt'] ?: ''); ?>" />
+                            <?php endif; ?>
+                            <?php $img_index++; ?>
+                        <?php endwhile; ?>
+                    </div>
+
+                    <div class="innovati_slider">
+                        <div class="swiper js-swipre-innov">
+                            <div class="swiper-wrapper">
+                                <?php $slide_index = 0; ?>
+                                <?php while (have_rows('f_only_exection_repeat_fields')) : the_row(); ?>
+                                    <div class="swiper-slide">
+                                        <div class="innovati_title FreightDispProBook">
+                                            <?php the_sub_field('name'); ?>
+                                        </div>
+                                        <div class="innovati_des">
+                                            <?php the_sub_field('description'); ?>
+                                        </div>
+                                    </div>
+                                    <?php $slide_index++; ?>
+                                <?php endwhile; ?>
+                            </div>
+                        </div>
+
+                        <div class="custom-navigation custom-navigation_blue">
+                            <button class="custom-s-btn custom-prev js-custom-prev-innov">
+                                <svg>
+                                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#s_left-arrow-blue" />
+                                </svg>
+                            </button>
+                            <div class="custom-pagination js-custom-pagination-innov"></div>
+                            <button class="custom-s-btn js-custom-next-innov custom-next">
+                                <svg>
+                                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#s_right-arrow-blue" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="bg-ou-big">
+    <!-- don't show phone-->
+    <div class="gibson-left-our mob-none">
+        <div class="gibson-left-our_name FreightDispProBook">GIBSON</div>
+    </div>
+
+    <div class="social-media">
+        <div class="container">
+            <div class="social-media_row">
+                <div class="social-media_title FreightDispProBook"><?php echo get_field('f_ser_only_socail_title'); ?></div>
+
+                <!-- don't show phone-->
+                <?php if (have_rows('f_only_socail_repeat_fields')): ?>
+                    <div class="social-media_items mob-none">
+                        <?php while (have_rows('f_only_socail_repeat_fields')): the_row();
+                            $icon = get_sub_field('icon'); // зображення
+                            $percend = get_sub_field('percend'); // процент
+                            $info = get_sub_field('info'); // info text
+                            $quantity = get_sub_field('quantity'); // кількість
+                            $impressions = get_sub_field('impressions'); // імпресії
+                        ?>
+                            <div class="item-media-soc">
+                                <div class="item-media-soc__icon">
+                                    <?php if ($icon): ?>
+                                        <img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt'] ?? ''); ?>" />
+                                    <?php endif; ?>
+                                </div>
+                                <div class="item-media-soc__wre">
+                                    <div>
+                                        <div class="item-media-soc__col FreightDispProBook"><?php echo esc_html($percend); ?><span>%</span></div>
+                                        <div class="item-media-soc__p item-media-soc__p_m"><?php echo esc_html($info); ?></div>
+                                    </div>
+                                    <div>
+                                        <div class="item-media-soc__col FreightDispProBook"><?php echo esc_html($quantity); ?><span>k+</span></div>
+                                        <div class="item-media-soc__p"><?php echo esc_html($impressions); ?></div>
+                                    </div>
+                                </div>
+                                <a href="#"></a>
+                            </div>
+                        <?php endwhile; ?>
+                    </div>
+                <?php endif; ?>
+
+                <!-- don't show on pc -->
+                <div class="social-media_it-mob pc-none">
+                    <div class="swiper js-swipre-social-mob">
+                        <?php if (have_rows('f_only_socail_repeat_fields')): ?>
+                            <div class="swiper-wrapper">
+                                <?php while (have_rows('f_only_socail_repeat_fields')): the_row();
+                                    $icon = get_sub_field('icon'); // типу icon-sc-fb-gold
+                                    $percend = get_sub_field('percend'); // процент, наприклад: 17
+                                    $info = get_sub_field('info'); // Follower increace
+                                    $quantity = get_sub_field('quantity'); // 209
+                                    $impressions = get_sub_field('impressions'); // Impressions
+                                ?>
+                                    <div class="swiper-slide">
+                                        <div class="item-media-soc">
+                                            <div class="item-media-soc__icon">
+                                                <svg>
+                                                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#<?php echo esc_attr($icon); ?>" />
+                                                </svg>
+                                            </div>
+                                            <div class="item-media-soc__wre">
+                                                <div>
+                                                    <div class="item-media-soc__col FreightDispProBook">
+                                                        <?php echo esc_html($percend); ?><span>%</span>
+                                                    </div>
+                                                    <div class="item-media-soc__p item-media-soc__p_m">
+                                                        <?php echo esc_html($info); ?>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="item-media-soc__col FreightDispProBook">
+                                                        <?php echo esc_html($quantity); ?><span>k+</span>
+                                                    </div>
+                                                    <div class="item-media-soc__p">
+                                                        <?php echo esc_html($impressions); ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a href="#"></a>
+                                        </div>
+                                    </div>
+                                <?php endwhile; ?>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+
+                    <div class="custom-navigation custom-navigation_blue">
+                        <div class="custom-pagination js-custom-pagination-social-mob"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="gloval-serv">
+        <div class="container">
+            <h2 class="title-2 title_mod  FreightDispProBook"><?php echo get_field('f_ser_consul_only_title'); ?></h2>
+
+            <!-- don't show om pc -->
+            <div class="servises-mob">
+                <?php if (have_rows('only_repeater')): ?>
+                    <?php $counter = 1; ?>
+                    <?php while (have_rows('only_repeater')): the_row();
+                        $title = get_sub_field('title');
+                        $text = get_sub_field('f_ser_consul_only_repeater_editor');
+                        $img = get_sub_field('f_ser_consul_only_repeater_img'); // не використовується в цьому макеті, але можна додати
+                    ?>
+                        <div class="item-serv-mob js-item-serv-mob">
+                            <div class="item-serv-mob_top js-top-ser-mob">
+                                <span class="FreightDispProBook"><?php echo str_pad($counter, 2, '0', STR_PAD_LEFT); ?></span>
+                                <div class="item-serv-mob_title MercuryDisplayRoman"><?php echo esc_html($title); ?></div>
+                                <i class="item-serv-mob_i">
+                                    <svg>
+                                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
+                                    </svg>
+                                    <svg>
+                                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
+                                    </svg>
+                                </i>
+                            </div>
+                            <div class="item-serv-mob_bot"
+                                style="overflow: hidden; height: 0; transition: height 0.3s ease;">
+                                <p><?php echo $text; ?></p>
+                            </div>
+                        </div>
+                        <?php $counter++; ?>
+                    <?php endwhile; ?>
+                <?php endif; ?>
+            </div>
+
+            <!-- don't show phone-->
+            <?php if (have_rows('only_repeater')): ?>
+                <div class="servises-items mob-none">
+                    <div class="items-ser">
+                        <?php $counter = 1; ?>
+                        <?php while (have_rows('only_repeater')): the_row();
+                            $title = get_sub_field('title');
+                        ?>
+                            <div class="item-ser js-item-ser <?php echo $counter === 1 ? 'active' : ''; ?>" data-item="<?php echo $counter; ?>">
+                                <div class="item-ser_wr">
+                                    <span class="FreightDispProBook"><?php echo str_pad($counter, 2, '0', STR_PAD_LEFT); ?></span>
+                                    <div class="item-ser__title MercuryDisplayRoman"><?php echo esc_html($title); ?></div>
+                                    <i class="item-ser_i">
+                                        <svg>
+                                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arrow-ser" />
+                                        </svg>
+                                        <svg>
+                                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#i-arr-ri" />
+                                        </svg>
+                                    </i>
+                                </div>
+                            </div>
+                            <?php $counter++; ?>
+                        <?php endwhile; ?>
+                    </div>
+
+                    <div class="card-cervis">
+                        <?php $counter = 1; ?>
+                        <?php while (have_rows('only_repeater')): the_row();
+                            $title = get_sub_field('title');
+                            $text = get_sub_field('f_ser_consul_only_repeater_editor');
+                            $img = get_sub_field('f_ser_consul_only_repeater_img');
+                        ?>
+                            <div class="card-s js-card-s <?php echo $counter === 1 ? 'active' : ''; ?>" data-item="<?php echo $counter; ?>">
+                                <div class="card-s__title MercuryDisplayRegular"><?php echo esc_html($title); ?></div>
+                                <div class="lin-left"><span></span></div>
+                                <div class="card-s_des">
+                                    <?php echo wpautop($text); ?>
+                                </div>
+                                <?php if ($img): ?>
+                                    <div class="card-s_img">
+                                        <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                            <?php $counter++; ?>
+                        <?php endwhile; ?>
+                    </div>
+                </div>
+            <?php endif; ?>
+        </div>
+    </section>
+
+    <div class="s-innovati s-blobals js-swiper-cop">
+        <div class="container">
+            <h2 class="title-2 title_mod FreightDispProBook"><?php echo get_field('f_only_connection_title'); ?></h2>
+        </div>
+        <div class="s-innovati__wr">
+            <div class="container ">
+                <?php if (have_rows('f_only_connection_repeat_fields')): ?>
+                    <div class="innovati_row">
+                        <!-- Картинки -->
+                        <div class="innovati_imgs">
+                            <?php $i = 0; ?>
+                            <?php while (have_rows('f_only_connection_repeat_fields')): the_row();
+                                $image = get_sub_field('image');
+                                $label = get_sub_field('name_bot_f');
+                                $note = get_sub_field('name_bot_lin');
+                            ?>
+                                <div class="innovati_wr_img innovati_wr_img-type-<?php echo $i + 1; ?> js-img-innow <?php echo $i === 0 ? 'active' : ''; ?>" data-index="<?php echo $i; ?>">
+                                    <div class="innovati_img">
+                                        <?php if ($image): ?>
+                                            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+                                        <?php endif; ?>
+                                    </div>
+
+                                    <?php if ($label || $note): ?>
+                                        <div class="sales-se">
+                                            <div class="sales-se_in">
+                                                <?php if ($label): ?>
+                                                    <span class="sales-se_number FreightDispProBook"><?php echo esc_html($label); ?></span>
+                                                <?php endif; ?>
+                                                <?php if ($note): ?>
+                                                    <span class="sales-se_t"><?php echo esc_html($note); ?></span>
+                                                <?php endif; ?>
+                                            </div>
+                                            <div class="lin-left"><span></span></div>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+                                <?php $i++; ?>
+                            <?php endwhile; ?>
+                        </div>
+
+                        <!-- Слайдер -->
+                        <div class="innovati_slider">
+                            <div class="swiper js-swipre-innov">
+                                <div class="swiper-wrapper">
+                                    <?php $j = 0; ?>
+                                    <?php while (have_rows('f_only_connection_repeat_fields')): the_row();
+                                        $title = get_sub_field('name');
+                                        $description = get_sub_field('description');
+                                    ?>
+                                        <div class="swiper-slide">
+                                            <div class="innovati_title FreightDispProBook"><?php echo esc_html($title); ?></div>
+                                            <div class="innovati_des">
+                                                <?php echo wpautop($description); ?>
+                                            </div>
+                                        </div>
+                                        <?php $j++; ?>
+                                    <?php endwhile; ?>
+                                </div>
+                            </div>
+
+                            <!-- Навігація -->
+                            <div class="custom-navigation">
+                                <button class="custom-s-btn custom-prev js-custom-prev-innov">
+                                    <svg>
+                                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#s_left-arrow" />
+                                    </svg>
+                                </button>
+                                <div class="custom-pagination js-custom-pagination-innov"></div>
+                                <button class="custom-s-btn js-custom-next-innov custom-next">
+                                    <svg>
+                                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#s_right-arrow" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>
@@ -1143,7 +620,7 @@
 
 <!-- don't show phone-->
 <div class="pos-block-r mob-none">
-    <div class="s-imga" style="background-image: url('img/bg-image-full3.jpg');"></div>
+    <div class="s-imga" style="background-image: url('<?php echo get_field('f_only_bottom_picture')['url']; ?>');"></div>
 </div>
 
 <?php
@@ -1166,7 +643,7 @@ $sub_title = get_field('field_tab_lets_sub_title', 'option');
         <div class="s-form-bot">
             <div class="container">
                 <div class="s-form-wr">
-                <?php get_template_part('template-parts/contact-form'); ?>
+                    <?php get_template_part('template-parts/contact-form'); ?>
                 </div>
             </div>
             <div class="s-form-bot_f">

@@ -239,7 +239,7 @@ acf_add_local_field_group([
         [
             'key' => 'f_home_portfoli_relationship',
             'label' => 'Portfolio',
-            'name' => 'portfolio',
+            'name' => 'f_home_portfoli_portfolio',
             'type' => 'relationship',
             'post_type' => ['portfolio'],
             'filters' => ['search'],

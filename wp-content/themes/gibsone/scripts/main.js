@@ -141,7 +141,6 @@ function domLoad() {
     }
 
     document.querySelectorAll('.js-btn-open-modal').forEach((el) => {
-        console.log(2)
         el.addEventListener('click', function (eve) {
             eve.preventDefault();
 

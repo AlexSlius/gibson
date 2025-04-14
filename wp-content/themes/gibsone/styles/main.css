@@ -1055,7 +1055,7 @@ textarea {
 }
 
 .s-porfolio {
-  padding-bottom: 7.5rem;
+  padding-bottom: 0;
 }
 
 .port-items {
@@ -2243,8 +2243,9 @@ textarea {
 .team-card__img {
   position: relative;
   width: 30.3125rem;
-  padding-bottom: 60.4%;
-  margin-bottom: -2rem;
+  padding-bottom: 62.4%;
+  margin-bottom: 0;
+  transform: translateY(2rem);
 }
 .team-card__img img {
   position: absolute;
@@ -2289,10 +2290,10 @@ textarea {
 
 .temms-slider-wr {
   margin-top: -2rem;
-  margin-bottom: -2rem;
+  margin-bottom: -4rem;
   margin-left: auto;
   color: #fff;
-  height: 45rem;
+  height: 47.1rem;
 }
 
 .swiper-team {
@@ -4510,8 +4511,8 @@ textarea {
     height: 363px;
   }
   .item-tem-card_img.img_contin img {
-    -o-object-fit: contain;
-       object-fit: contain;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .item-tem-card_bot {
     position: relative;
