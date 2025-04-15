@@ -251,8 +251,8 @@ $f_home_portfolio_lin = get_field('f_home_portfolio_link');
         <?php
         if ($portfolio_ids) :
             foreach ($portfolio_ids as $post_id) :
-                $title = get_the_title($post_id);
-                $link = get_permalink($post_id);
+                $title = get_field('f_portfolio_name', $post_id);
+                $link = get_field('f_portfolio_link', $post_id);
                 $image = get_field('f_portfolio_img', $post_id);
                 $image_url = is_array($image) ? $image['url'] : $image;
         ?>
@@ -301,7 +301,7 @@ $f_home_portfolio_lin = get_field('f_home_portfolio_link');
 
     <?php
     $f_home_services_title = get_field('f_home_services_title');
-    $f_home_services_edito = get_field('f_home_services_edito');
+    $f_home_services_edito = get_field('f_home_services_editor');
     $f_home_services_link = get_field('f_home_services_link');
     $services = get_field('f_home_service_repeater_fields');
     ?>

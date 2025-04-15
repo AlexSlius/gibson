@@ -223,7 +223,7 @@
                     <img src="<?php echo esc_url($modal_picture['url']); ?>" alt="<?php echo esc_attr($modal_picture['alt']); ?>" />
                 </div>
             </div>
-            <div class="modale_form">
+            <div class="modale_form js-form-wrap">
                 <div class="modale_form_wr">
                     <!-- don't show on phone -->
                     <div class="modale_title MercuryDisplayRoman mob-none"><?php echo $modal_title_pc ?></div>
@@ -276,12 +276,29 @@
                         </div>
                     </form>
                 </div>
-                <!-- <div class="form-successful">
+                <div class="form-successful js-cussess-form">
                     <div class="form-successful__wr">
                         <div class="form-successful_title MercuryDisplayRoman"><?php echo $modal_title_successfull_title ?></div>
                         <div class="form-successful_sub-title MercuryDisplayRoman"><?php echo $modal_sub_successfull_title ?></div>
                     </div>
-                </div> -->
+                </div>
+
+                <div class="form-successful form-ussuccessful js-uncussess-form">
+                    <div class="form-successful__wr">
+                        <div class="form-successful_title MercuryDisplayRoman">Oops! There was an error sending the form</div>
+                        <div class="form-successful_sub-title MercuryDisplayRoman">Please, try again</div>
+                        <div class="form-successful_btn-wr">
+                            <button class="bnt-def bnt-def_bigget_height bnt-def_gold js-try-againe">
+                                <i>
+                                    <svg>
+                                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#line-btn" />
+                                    </svg>
+                                </i>
+                                <span>Try againe</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

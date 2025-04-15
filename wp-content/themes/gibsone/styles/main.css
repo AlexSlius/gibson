@@ -320,7 +320,7 @@ textarea {
   background: transparent;
 }
 .bnt-def.bnt-def_bigger {
-  padding: 0.8125rem 2.25rem;
+  padding: 1.05rem 2.25rem;
   min-width: 15.625rem;
 }
 .bnt-def.bnt-def_bigger_big {
@@ -331,7 +331,7 @@ textarea {
   padding: 1.0625rem 2.25rem;
 }
 .bnt-def.bnt-def_middle_height {
-  padding: 0.8125rem 2.25rem;
+  padding: 1.05rem 2.25rem;
 }
 .bnt-def.bnt-def_gold:hover {
   color: var(--color-white);
@@ -2656,7 +2656,7 @@ textarea {
 
 .s-innovati {
   margin-top: -12.5rem;
-  padding-bottom: 4.375rem;
+  padding-bottom: 8.375rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -3282,7 +3282,19 @@ textarea {
   z-index: 50;
   background: #F2F2F2;
   padding: 1rem;
+  display: none;
 }
+
+.open-success {
+  display: block;
+}
+
+.form-successful_btn-wr {
+  margin-top: 32px;
+  display: flex;
+  justify-content: flex-start;
+}
+
 .form-successful__wr {
   border: 1px solid rgba(173, 143, 73, 0.6);
   width: 100%;
@@ -3526,6 +3538,14 @@ textarea {
 
 .servises-mob {
   display: none;
+}
+
+.form-ussuccessful .form-successful_title{
+  color: #FE463F;
+}
+
+.form-ussuccessful .form-successful_sub-title{
+  color: #05172F;
 }
 
 @media (min-width: 768px) {

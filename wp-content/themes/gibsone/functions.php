@@ -2,6 +2,7 @@
 
 require get_template_directory() . '/posts/register-posts.php';
 require get_template_directory() . '/acf-fields/register-fields.php';
+require get_template_directory() . '/ajax/init.php';
 
 
 function clean_wp()
@@ -116,20 +117,19 @@ function my_enqueue_scripts()
 	);
 }
 
-class Custom_Main_Menu_Walker extends Walker_Nav_Menu {
-    function start_lvl(&$output, $depth = 0, $args = null) {
-    }
+class Custom_Main_Menu_Walker extends Walker_Nav_Menu
+{
+	function start_lvl(&$output, $depth = 0, $args = null) {}
 
-    function end_lvl(&$output, $depth = 0, $args = null) {
-    }
+	function end_lvl(&$output, $depth = 0, $args = null) {}
 
-    function start_el(&$output, $item, $depth = 0, $args = null, $id = 0) {
-        $title = esc_html($item->title);
-        $url = esc_url($item->url);
+	function start_el(&$output, $item, $depth = 0, $args = null, $id = 0)
+	{
+		$title = esc_html($item->title);
+		$url = esc_url($item->url);
 
-        $output .= "<a href=\"{$url}\">{$title} <span></span> <span></span></a>";
-    }
+		$output .= "<a href=\"{$url}\">{$title} <span></span> <span></span></a>";
+	}
 
-    function end_el(&$output, $item, $depth = 0, $args = null) {
-    }
+	function end_el(&$output, $item, $depth = 0, $args = null) {}
 }

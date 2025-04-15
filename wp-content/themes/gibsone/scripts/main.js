@@ -209,8 +209,40 @@ function domLoad() {
             });
 
             if (isValid) {
-                console.log("Form Data:", formData);
-                itemFor.reset();
+                const father = itemFor.closest('.js-form-wrap');
+                const successfull = father.querySelector('.js-cussess-form');
+                const unsuccessull = father.querySelector('.js-uncussess-form');
+
+                const ajaxData = new FormData();
+                ajaxData.append('action', 'send_contact_form');
+
+                for (const key in formData) {
+                    ajaxData.append(key, formData[key]);
+                }
+
+                fetch('/wp-admin/admin-ajax.php', {
+                    method: 'POST',
+                    body: ajaxData,
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.success) {
+                            console.log('Thank you! Message sent.');
+                            successfull.classList.add('open-success');
+
+                            setTimeout(() => {
+                                successfull.classList.remove('open-success');
+                            }, 2000);
+
+                            itemFor.reset();
+                        } else {
+                            console.log('Sending error. Please try again.');
+                            unsuccessull.classList.add('open-success');
+                        }
+                    })
+                    .catch(() => {
+                        console.log('Server error. Please try again later.');
+                    });
             }
         });
     });
@@ -221,6 +253,12 @@ function domLoad() {
         errorElement.textContent = message;
         parent.appendChild(errorElement);
     }
+
+    const btnTryAgain = document.querySelector('.js-try-againe');
+
+    btnTryAgain.addEventListener('click', function () {
+        this.closest('.js-uncussess-form').classList.remove('open-success');
+    });
 
     // ---
     const menuMob = document.querySelector('.js-mob-menu');
